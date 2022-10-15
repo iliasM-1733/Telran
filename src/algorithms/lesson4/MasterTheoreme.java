@@ -10,7 +10,6 @@ public class MasterTheoreme {
 
     public static void main(String[] args) {
         int x = 4;
-        System.out.println(myRecursion(x)); // { 1, 2, 3, 4, 5, 6, 7}
         System.out.println(Math.pow(2, x));
 
     }
