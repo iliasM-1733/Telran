@@ -18,7 +18,7 @@ public class MasterTheoreme {
 
     //O(1)
     static void simpliest(int[] nums) {
-        System.out.println(nums[0]);
+        System.out.println(nums[nums.length - 1]);
     }
 
     //O(logN)
@@ -54,6 +54,14 @@ public class MasterTheoreme {
         return counter;
     }
 
+    //  O (n log n) = n * log n
+    static void testhMethod(int[][] nums, int x) {
+        for (int i = 0; i < nums.length; i++) { // n
+            BinarySearch binarySearch = new BinarySearch();
+            binarySearch.binarySearch(nums[i], x); // log n
+        }
+    }
+
     //O(N^2)
     static void examplePowN(int[] nums) {
         int[] temp = new int[nums.length];
@@ -64,30 +72,11 @@ public class MasterTheoreme {
         }
     }
 
-    //O(2^N)
-    static int myRecursion(int n) { //3 return 8
-        if (n <= 0) {
-            return 1;
-        } else {
-            return myRecursion(n -1) + myRecursion(n - 1);
+    // O (n!)
+    static void method5(int n) { // 5
+        for (int i = 0; i < n; i++) { // 5 * 4 * 3 * 2 * 1
+            System.out.println(n); // const
+            method5(n - 1); // 2
         }
-    }
-
-    // O(N + N + 100) = O (2N) = O(N)
-    // при оценке сложности алгоритма константные величины сокращаются
-    static void constant(int[] nums1) {
-        for (int i = 0; i < nums1.length; i++) {
-            nums1[i]= nums1[i] + nums1[i];
-        }
-
-        for (int i = 0; i < nums1.length; i++) {
-            System.out.println(nums1[i]);
-        }
-
-        int[] temp = new int[100];
-        for (int i = 0; i < temp.length; i++) {
-            temp[i] = i;
-        }
-
     }
 }
