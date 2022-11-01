@@ -1,4 +1,4 @@
-package basik;
+package basiс;
 
 import java.util.Locale;
 

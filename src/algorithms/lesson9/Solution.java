@@ -1,7 +1,13 @@
 package algorithms.lesson9;
 
+
+// A -> B -> C -> null  reverse
+// null <- A <- B <- C
+// A -> B -> C -> D -> E -> F -> null  reverse(1, 3);
+// A -> D -> C -> B -> E -> F -> null
+
 public class Solution {
-    public ListNode reverseBetween(ListNode head, int m, int n) {
+    public static ListNode reverseBetween(ListNode head, int m, int n) {
         // Пустой list
         if (head == null) {
             return null;

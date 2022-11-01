@@ -1,6 +1,5 @@
-package basik;
+package basiс;
 
-import java.net.http.HttpClient;
 import java.util.Scanner;
 
 public class LessonFiveBoolean {

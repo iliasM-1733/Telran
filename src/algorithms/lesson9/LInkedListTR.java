@@ -1,5 +1,8 @@
 package algorithms.lesson9;
 
+// https://leetcode.com/problems/reverse-linked-list-ii/solution/
+// https://leetcode.com/problems/reverse-linked-list/
+
 import java.util.*;
 
 public class LInkedListTR {
@@ -9,8 +12,11 @@ public class LInkedListTR {
         queue.add("Two");
         queue.add("Three");
 
+        Stack<String> stack = new Stack<>();
+        stack.push("Zero");
 
-        LinkedList <String> list = new LinkedList<>();
+
+        LinkedList <String> list = new LinkedList<>(stack);
         list.addAll(queue);
         System.out.println(list);
 
@@ -21,12 +27,12 @@ public class LInkedListTR {
 
 
         list.clear();
-        list = fillList(list);
+        list = fillList();
         System.out.println(list.containsAll(queue));
 
         System.out.println("LinkedList:" + list);
 
-        ListIterator list_Iter = list.listIterator(2);
+        ListIterator list_Iter = list.listIterator(4);
 
         System.out.println("The list is as follows:");
         while(list_Iter.hasNext()){
@@ -34,7 +40,7 @@ public class LInkedListTR {
         }
 
         // peek(): этот метод извлекает, но не удаляет заголовок (первый элемент) этого списка.
-        list.peek();
+        System.out.println("list.peek() " + list.peek());
         list.peekFirst();
         list.peekLast();
         System.out.println(list);
@@ -60,7 +66,7 @@ public class LInkedListTR {
         // poll() : этот метод извлекает и удаляет заголовок (первый элемент) этого списка.
         list.poll();
         list.pollFirst();
-        list.peekLast();
+        list.pollLast();
         System.out.println(list);
 
         // remove(), removeFirst() - используется для удаления первого элемента из связанного списка. Эта функция также возвращает первый элемент после его удаления.
@@ -70,13 +76,11 @@ public class LInkedListTR {
         list.removeFirst();
         list.removeLast();
         System.out.println(list);
-
-
-
     }
 
 
-    static LinkedList<String> fillList(LinkedList list) {
+    static LinkedList<String> fillList() {
+        LinkedList<String> list = new LinkedList<>();
         list.add("One");
         list.add("Two");
         list.add("Three");
