@@ -1,8 +1,5 @@
 package algorithms.lesson9;
 
-// https://leetcode.com/problems/reverse-linked-list-ii/solution/
-// https://leetcode.com/problems/reverse-linked-list/
-
 import java.util.*;
 
 public class LInkedListTR {
