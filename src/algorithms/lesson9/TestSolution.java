@@ -4,7 +4,11 @@ public class TestSolution {
     public static void main(String[] args) {
         ListNode listNode = fillLinkedList();
         printListNode(listNode);
-        listNode = Solution.reverseBetween(listNode, 0, 7);
+        //listNode = Solution.reverseBetween(listNode, 0, 7);
+        //printListNode(listNode);
+
+        listNode = fillLinkedList();
+        listNode = Solution.reverseBetween(listNode, 2, 5);
         printListNode(listNode);
     }
 
