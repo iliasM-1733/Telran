@@ -2,12 +2,14 @@ package algorithms.lesson4;
 
 public class BinarySearch {
     public static void main(String[] args) {
+
+         // log2 1_000_000 ±= 19-20
         int arr[] = new int[1_000_000];
         for(int i = 0; i < 1_000_000; i++){
             arr[i] = i;
         }
 
-        System.out.println(binarySearch(arr, -234_238));
+        System.out.println(binarySearch(arr, 20000));
 
 
 //        long ssStart = System.nanoTime();
@@ -45,6 +47,7 @@ public class BinarySearch {
     }
 
 
+    // худший случай - O(n), лучший случай  - O(1), усредненный случай - O(n/2)
     static int simpleSearch(int[] nums, int x) {
         for(int i = 0; i < nums.length; i++) {
             if (nums[i] == x) {

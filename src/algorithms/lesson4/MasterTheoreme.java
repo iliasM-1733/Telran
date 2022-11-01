@@ -71,6 +71,16 @@ public class MasterTheoreme {
         }
     }
 
+
+    // O(2^n)
+    static int myRecursion(int n) {
+        if (n <= 1) {
+            return 1;
+        } else {
+            return myRecursion(n - 1) + myRecursion(n - 1);
+        }
+    }
+
     // O (n!)
     static void method5(int n) { // 5
         for (int i = 0; i < n; i++) { // 5 * 4 * 3 * 2 * 1
