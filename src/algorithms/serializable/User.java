@@ -8,19 +8,19 @@ public class User implements Serializable {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         //создаем наш объект
         User user = new User();
-        user.setFirstName("Stefan");
-        user.setLastName("Smith");
-        user.setEmail("ssmith@email.com");
+        user.setFirstName("12");
+        user.setLastName("12");
+        user.setEmail("12");
         user.setBirthDate(LocalDate.of(1991, 7, 16));
         user.setLogin("ssmith");
-        user.setPassword("gemma_arterton_4ever_in_my_heart91");
+        user.setPassword("password12");
 
-        System.out.println("Initial user: " + user + "\r\n");
+        System.out.println("initial user: " + user + "\r\n");
 
 
         serialize(user);
         User loadedUser = deserialize();
-        System.out.println("Loaded user from file: " + loadedUser + "\r\n");
+        System.out.println("loaded user:  " + loadedUser + "\r\n");
     }
 
     private static final long serialVersionUID = 1L;
@@ -30,7 +30,7 @@ public class User implements Serializable {
     private String email;
     private LocalDate birthDate;
     private String login;
-    private String password;
+    transient private String password;
 
     public User() {
     }
