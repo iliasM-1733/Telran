@@ -12,7 +12,7 @@ package basiс;
 
 public class LessonSevenSwitch {
     public static void main(String[] args) {
-        switchWithEnum(Transport.BICYCLE);
+        tryingTernaryOperator();
     }
 
     private enum DayOfWeek {
@@ -123,23 +123,30 @@ public class LessonSevenSwitch {
      */
 
     public static void tryingTernaryOperator() {
+        String isOdd;
         int x = 34;
-        int y = 56;
+        int y = 156;
+        int z = 76;
+
         int max = x > y ? x : y;
         System.out.printf("maximum of two variables equals %d\n", max);
 
         int min = x > y ? y : x;
         System.out.printf("minimum of two variables equals %d\n", min);
 
-        boolean isEven = x % 2 == 0 ? true : false;
+        boolean isEven = (x % 2 == 0) ? true : false;
         if (isEven) {
             System.out.println("x is even number");
         } else {
-            System.out.println("x is even number");
+            System.out.println("x is odd number");
         }
 
+
         // незаконная в Java запись:
-        // x % 2 == 0 ? System.out.println("x is even number") : System.out.println("x is even number")
+        // (x % 2 == 0) ? "x is even number" : "x is odd number";
+
+        int maxOfThree = (x > y) ? ((x > z) ? x : z) : ((y > z) ? y : z);
+        System.out.println(maxOfThree);
 
     }
 }
