@@ -30,11 +30,11 @@ public class LInkedListTR {
         list = fillList();
         System.out.println(list.containsAll(queue));
 
-        System.out.println("LinkedList:" + list);
+        System.out.println("LinkedList: " + list);
 
         ListIterator list_Iter = list.listIterator(4);
 
-        System.out.println("The list is as follows:");
+        System.out.println("The list is as follows: ");
         while(list_Iter.hasNext()){
             System.out.println(list_Iter.next());
         }
@@ -91,4 +91,36 @@ public class LInkedListTR {
     }
 
 
+    static void compareArrayAndLinkedLists() {
+        ArrayList<Integer> temp = new ArrayList<>(1000);
+        for (int i = 0; i < 1000; i++) {
+            temp.add(i);
+        }
+
+
+        ArrayList<Integer> arrayList = new ArrayList<>(temp);
+        LinkedList<Integer> linkedList = new LinkedList<>(temp);
+
+        long arrayStart = System.currentTimeMillis();
+        for (int i = 0; i < 100_000; i++) {
+            arrayList.add(0, i);
+        }
+        long arrayResult = System.currentTimeMillis() - arrayStart;
+
+
+        long linkedStart = System.currentTimeMillis();
+        for (int i = 0; i < 100_000; i++) {
+            linkedList.add(0, i);
+        }
+        long linkedResult = System.currentTimeMillis() - linkedStart;
+
+
+        System.out.printf("Time for adding 1m elem to ArrayList = %d,\nTime for adding 1m elem to LinkedList = %d\n", arrayResult, linkedResult);
+        if (arrayResult < linkedResult) {
+            System.out.printf("Adding 1m elem to the middle of ArrayList faster, than adding 1m elem to the middle of LinkedList faster on %d", arrayResult - linkedResult);
+        } else {
+            System.out.printf("Adding 1m elem to the middle of LinkedList faster, than adding 1m elem to the middle of ArrayList faster on %d", linkedResult - arrayResult);
+        }
+
+    }
 }

@@ -35,6 +35,11 @@ public class LessonFiveBoolean {
         //logicalNegation();
         logicalPriority();
 
+        // 2 > 3
+        // "sdfsdf" == "sdfsf"
+        //  3 != 34
+
+
     }
 
     static void logicalEquality() {

@@ -15,26 +15,33 @@ public class Solution {
 
         // Перемещайте два указателя до тех пор, пока они не достигнут нужной начальной точки
         // в листе
-        ListNode cur = head, prev = null;
+        ListNode current = head, prev = null;
         while (m > 1) {
-            prev = cur;
-            cur = cur.next;
+            prev = current;
+            current = current.next;
             m--;
             n--;
         }
 
         // Два указателя, которые зафиксируют окончательные соединения.
-        ListNode con = prev, tail = cur;
+        ListNode con = prev, tail = current;
 
         // Итеративно меняйте местами узлы, пока n не станет 0.
         ListNode third = null;
         while (n > 0) {
-            third = cur.next;
-            cur.next = prev;
-            prev = cur;
-            cur = third;
+            third = current.next;
+            current.next = prev;
+            prev = current;
+            current = third;
             n--;
         }
+        // third = E
+        // prev = D
+        // current = Third
+
+
+
+
 
         // Adjust the final connections as explained in the algorithm
         if (con != null) {
@@ -43,7 +50,7 @@ public class Solution {
             head = prev;
         }
 
-        tail.next = cur;
+        tail.next = current;
         return head;
     }
 }

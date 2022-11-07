@@ -2,25 +2,38 @@ package algorithms.serializable;
 
 import java.io.*;
 import java.time.LocalDate;
+import java.util.LinkedList;
 
 public class User implements Serializable {
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         //создаем наш объект
         User user = new User();
-        user.setFirstName("12");
-        user.setLastName("12");
-        user.setEmail("12");
+        user.setFirstName("John");
+        user.setLastName("Smith");
+        user.setEmail("jsmith@mail.com");
         user.setBirthDate(LocalDate.of(1991, 7, 16));
         user.setLogin("ssmith");
         user.setPassword("password12");
 
+        LinkedList<String> list = new LinkedList<>();
+        list.add("one");
+        list.add("two");
+        list.add("three");
+        user.setList(list);
+
+
         System.out.println("initial user: " + user + "\r\n");
-
-
         serialize(user);
+
+
         User loadedUser = deserialize();
         System.out.println("loaded user:  " + loadedUser + "\r\n");
+
+        list = loadedUser.getList();
+        System.out.println(list.get(0));
+        System.out.println(list.get(1));
+        System.out.println(list.get(2));
     }
 
     private static final long serialVersionUID = 1L;
@@ -29,7 +42,9 @@ public class User implements Serializable {
     private String lastName;
     private String email;
     private LocalDate birthDate;
-    private String login;
+
+    private LinkedList<String> list = new LinkedList<>();
+    transient private String login;
     transient private String password;
 
     public User() {
@@ -92,6 +107,14 @@ public class User implements Serializable {
         this.password = password;
     }
 
+    public LinkedList<String> getList() {
+        return list;
+    }
+
+    public void setList(LinkedList<String> list) {
+        this.list = list;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -99,6 +122,7 @@ public class User implements Serializable {
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", birthDate=" + birthDate +
+                ", list=" + list +
                 ", login='" + login + '\'' +
                 ", password='" + password + '\'' +
                 '}';
@@ -132,7 +156,6 @@ public class User implements Serializable {
         ObjectInputStream objectInputStream = null;
 
         try {
-
             //создаем 2 потока для десериализации объекта из файла
             fileInputStream = new FileInputStream(path);
             objectInputStream = new ObjectInputStream(fileInputStream);

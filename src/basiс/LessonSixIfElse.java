@@ -4,21 +4,26 @@ package basiс;
 import java.util.Scanner;
 
 /**
- * если условие в скобках выполняется (true), то выполнится команда_1, в противном случае - команда_2
+ * если условие в скобках выполняется (true), то выполнится команда_1,
+ * в противном случае - команда_2
  * if (условие) {
  *      команда_1;
  *   }
- * else {
+ * else if (условие 2){
  *      команда_2;
  *    }
+ * else if (условие 3){
+ *       команда_3;
+ *  }
+ *  else {
+ *      команда_4;
+ *  }
  */
 public class LessonSixIfElse {
     static Scanner SCANNER = new Scanner(System.in);
 
     public static void main(String[] args) {
-        boolean bool = true;
-
-
+        isSick(false, false);
     }
 
     static void tryIfElseStatement(boolean bool) {
@@ -32,6 +37,7 @@ public class LessonSixIfElse {
     static void tryElseIfStatement(int x) {
         if (x > 0) {
             System.out.println("i print it from \"if\" statement. That means, that x is positive number.");
+            ifElseWithString("Sunday");
         } else if (x == 0){
             System.out.println("i print it from \"else if\" statement. That means, that x is equals to zero");
         } else {
@@ -42,7 +48,7 @@ public class LessonSixIfElse {
     static void ifElseWithString(String dayOfTheWeek) {
         if (dayOfTheWeek.equals("Sunday") || dayOfTheWeek.equals("Saturday")) {
             System.out.println("today is weekend,enjoy");
-        } else if (dayOfTheWeek.equals("Monday")) {
+        } else if (dayOfTheWeek.equals("Friday")) {
             System.out.println("today is short day and tomorrow is weekend! Happy Friday!");
         } else {
             System.out.println("today is working day! Just focus on daily task;)");
@@ -86,7 +92,14 @@ public class LessonSixIfElse {
             System.out.println("it's look serious, better to call doc");
         } else if (gotTemperature || haveSoreThroat) {
             if (gotTemperature) {
-                System.out.println("try to eat medicine");
+                double temperature = SCANNER.nextDouble();
+                if(temperature > 43) {
+                    System.out.println("Call emergency!");
+                } else if (temperature <= 43 && temperature > 39 ) {
+                    System.out.println("call doc");
+                } else  {
+                    System.out.println("try to eat medicine");
+                }
             } else {
                 System.out.println("drink more hot tea with lemon and honey!");
             }
@@ -94,4 +107,6 @@ public class LessonSixIfElse {
             System.out.println("Everything looks fine! You are in a good condition!");
         }
     }
+
+
 }
