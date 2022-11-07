@@ -143,7 +143,7 @@ public class LessonSevenSwitch {
 
 
         // незаконная в Java запись:
-        // (x % 2 == 0) ? "x is even number" : "x is odd number";
+        // (x % 2 == 0) ? System.out.println("x is even number") : System.out.println("x is odd number");;
 
         int maxOfThree = (x > y) ? ((x > z) ? x : z) : ((y > z) ? y : z);
         System.out.println(maxOfThree);
