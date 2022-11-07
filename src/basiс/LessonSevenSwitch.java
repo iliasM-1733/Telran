@@ -12,16 +12,12 @@ package basiс;
 
 public class LessonSevenSwitch {
     public static void main(String[] args) {
-        tryingTernaryOperator();
+        switchWithEnum(2);
     }
-
     private enum DayOfWeek {
         MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY;
     }
 
-    private enum Transport {
-        CAR, BUS, TRAIN, BICYCLE, ON_FOOT;
-    }
 
 
     public static void switchWithEnum(int day) {
@@ -32,25 +28,17 @@ public class LessonSevenSwitch {
 
         switch (day) {
             case 1:
-                System.out.println(DayOfWeek.MONDAY);
-                break;
             case 2:
-                System.out.println(DayOfWeek.TUESDAY);
-                break;
             case 3:
-                System.out.println(DayOfWeek.WEDNESDAY);
-                break;
+                System.out.println("don't forget about Java basic course!");
             case 4:
-                System.out.println(DayOfWeek.THURSDAY);
-                break;
             case 5:
-                System.out.println(DayOfWeek.FRIDAY);
+                System.out.println("today is working day");
                 break;
             case 6:
-                System.out.println(DayOfWeek.SATURDAY);
-                break;
             default:
-                System.out.println(DayOfWeek.SUNDAY);
+                System.out.println("today is weekend");
+                break;
         }
     }
 
@@ -141,13 +129,11 @@ public class LessonSevenSwitch {
             System.out.println("x is odd number");
         }
 
-
         // незаконная в Java запись:
         // (x % 2 == 0) ? System.out.println("x is even number") : System.out.println("x is odd number");;
 
         int maxOfThree = (x > y) ? ((x > z) ? x : z) : ((y > z) ? y : z);
         System.out.println(maxOfThree);
-
     }
 }
 
