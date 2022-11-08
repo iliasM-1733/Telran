@@ -12,13 +12,11 @@ package basiс;
 
 public class LessonSevenSwitch {
     public static void main(String[] args) {
-        switchWithEnum(2);
+        switchWithoutBreak("two");
     }
     private enum DayOfWeek {
         MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY;
     }
-
-
 
     public static void switchWithEnum(int day) {
         if (day > 7) {
@@ -44,11 +42,11 @@ public class LessonSevenSwitch {
 
     public static void switchWithEnum(Transport transport) {
         switch (transport) {
-            case CAR -> System.out.println("you will be on final point in 15 minuts with a car");
-            case BUS -> System.out.println("you will be on final point in 20 minuts with a bus");
-            case TRAIN -> System.out.println("you will be on final point in 22 minuts with a train");
-            case BICYCLE -> System.out.println("you will be on final point in 17 minuts with a bicycle");
-            case ON_FOOT -> System.out.println("you will be on final point in 15 minuts by foot");
+            case CAR -> System.out.println("you will be on final point in 15 minutes with a car");
+            case BUS -> System.out.println("you will be on final point in 20 minutes with a bus");
+            case TRAIN -> System.out.println("you will be on final point in 22 minutes with a train");
+            case BICYCLE -> System.out.println("you will be on final point in 17 minutes with a bicycle");
+            case ON_FOOT -> System.out.println("you will be on final point in 15 minutes by foot");
         }
     }
 
@@ -66,7 +64,6 @@ public class LessonSevenSwitch {
                 System.out.println("This string is meaning 5 number");
             default:
                 System.out.println("i dont know what does it means");
-
         }
     }
 

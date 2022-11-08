@@ -1,47 +1,109 @@
 package algorithms.lesson10trees;
 
-// A Java program to introduce Binary Tree
+//               20
+//            /       \
+//          7          35
+//        /   \       /  \
+//       4     9     31   40
+//        \         /    /  \
+//         6       28   38   52
+
+
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
+
+// пример бинарного дерева с рекурсивным обходом в глубину
 public class BinaryTree {
+        public static void main(String[] params) {
+            Tree root =
+                    new Tree(20,
+                            new Tree(7,
+                                    new Tree(4, null, new Tree(6)), new Tree(9)),
+                            new Tree(35,
+                                    new Tree(31, new Tree(28), null),
+                                    new Tree(40, new Tree(38), new Tree(52))));
 
-    // Root of Binary Tree
-    Node root;
+            System.out.println("Сумма дерева: " + Tree.sumWide(root));
+        }
 
-    // Constructors
-    BinaryTree(int key) { root = new Node(key); }
+        static class Tree {
+            int value;
+            Tree left;
+            Tree right;
 
-    BinaryTree() { root = null; }
+            public Tree(int value, Tree left, Tree right) {
+                this.value = value;
+                this.left = left;
+                this.right = right;
+            }
 
-    public static void main(String[] args) {
-        BinaryTree tree = new BinaryTree();
+            public Tree(int value) {
+                this.value = value;
+            }
 
-        // create root
-        tree.root = new Node(1);
+            // пример бинарного дерева с рекурсивным обходом в глубину
+            public int sumRecursive(Tree root) {
+                int summ = value;
 
-		/* following is the tree after above statement
+                if (left != null) {
+                    summ += sumRecursive(root.left);
+                }
 
-			1
-			/ \
-		null null	 */
+                if (right != null) {
+                    summ += sumRecursive(root.right);
+                }
+                return summ;
+            }
 
-        tree.root.left = new Node(2);
-        tree.root.right = new Node(3);
+            // пример бинарного дерева с итеративным обходом в глубину
+            public static int sumDeep(Tree root) {
+                Stack<Tree> stack = new Stack<>();
+                stack.push(root);
 
-		/* 2 and 3 become left and right children of 1
-			1
-			/	 \
-		2	 3
-		/ \	 / \
-	null null null null */
+                int summ = 0;
 
-        tree.root.left.left = new Node(4);
-		/* 4 becomes left child of 2
-					1
-				/	 \
-			2		 3
-			/ \	 / \
-			4 null null null
-		/ \
-		null null
-		*/
+                while (!stack.isEmpty()) {
+                    Tree node = stack.pop();
+
+                    System.out.println(node.value);
+
+                    summ = summ + node.value;
+
+                    if (node.right != null) {
+                        stack.push(node.right);
+                    }
+
+                    if (node.left != null) {
+                        stack.push(node.left);
+                    }
+                }
+                return summ;
+            }
+
+            // пример бинарного дерева с итеративным обходом в ширину
+            public static int sumWide(Tree root) {
+                Queue<Tree> queue = new LinkedList<>();
+                queue.add(root);
+
+                int summ = 0;
+
+                while (!queue.isEmpty()) {
+                    Tree node = queue.remove();
+
+                    System.out.println(node.value);
+
+                    summ = summ + node.value;
+
+                    if (node.left != null) {
+                        queue.add(node.left);
+                    }
+
+                    if (node.right != null) {
+                        queue.add(node.right);
+                    }
+                }
+                return summ;
+            }
+        }
     }
-}
