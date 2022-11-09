@@ -8,10 +8,10 @@ package algorithms.lesson10trees;
 //        \         /    /  \
 //         6       28   38   52
 
+ //
 
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
+import java.util.*;
+import java.util.concurrent.ConcurrentSkipListMap;
 
 // пример бинарного дерева с рекурсивным обходом в глубину
 public class BinaryTree {
@@ -24,8 +24,14 @@ public class BinaryTree {
                                 new Tree(31, new Tree(28), null),
                                 new Tree(40, new Tree(38), new Tree(52))));
 
-        // System.out.println("Сумма дерева: " + Tree.sumWide(root));
-        System.out.println(root.sumRecursive(root));
+        System.out.println("Сумма дерева: " + Tree.sumWide(root));
+        //System.out.println(root.sumRecursive(root));
+
+
+        Set<Integer> treeSet = new TreeSet<>();
+        Map<Integer, Integer> treeMap = new TreeMap<>();
+
+
     }
 
     static class Tree {
@@ -46,6 +52,8 @@ public class BinaryTree {
         // пример бинарного дерева с рекурсивным обходом в глубину
         public int sumRecursive(Tree root) {
             int summ = root.value;
+
+            System.out.println(root.value);
 
             if (root.left != null) {
                 summ += sumRecursive(root.left);
