@@ -12,11 +12,12 @@ package basiс;
 
 public class LessonSevenSwitch {
     public static void main(String[] args) {
-        switchWithoutBreak("two");
+
     }
     private enum DayOfWeek {
         MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY;
     }
+
 
     public static void switchWithEnum(int day) {
         if (day > 7) {
