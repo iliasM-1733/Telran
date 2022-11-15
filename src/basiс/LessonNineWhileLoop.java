@@ -1,5 +1,7 @@
 package basiс;
 
+import com.sun.source.tree.DoWhileLoopTree;
+
 import java.util.Scanner;
 
 /**
@@ -19,12 +21,12 @@ public class LessonNineWhileLoop {
     static final Scanner SCANNER = new Scanner(System.in);
 
     public static void main(String[] args) {
-
+        tryReturnWithWhile();
     }
 
     private static void simpleWhileLoop() {
         int x = 0;
-        while (x < 0) {
+        while (x < 10) {
             System.out.print(x + " ");
             x++;
         }
@@ -32,7 +34,7 @@ public class LessonNineWhileLoop {
     }
 
     private static void simpleWhileLoop(int x) {
-        while (x < 0) {
+        while (x > 0) {
             System.out.print(x + " ");
             x++;
         }
@@ -49,6 +51,7 @@ public class LessonNineWhileLoop {
     }
 
     private static void simpleDoWhileLoop(int x) {
+
         do {
             System.out.println("i print it from do-while loop");
             x++;
@@ -70,6 +73,7 @@ public class LessonNineWhileLoop {
             int elem = scanner.nextInt();
             sum += elem;
         }
+
         System.out.println(sum);
     }
 
