@@ -1,0 +1,96 @@
+многопоточность:
+https://dataart.team/ru/articles/mnogopotochnost-v-java-kurs-iz-shesti-lekfii
+
+Асимптотический анализ (на основе размера входных данных) в анализе сложности алгоритмов:
+https://www.geeksforgeeks.org/analysis-of-algorithms-set-1-asymptotic-analysis/?ref=ghm
+https://habr.com/ru/post/78728/
+https://proglib.io/p/analysis-of-algorithm
+https://www.youtube.com/watch?v=F9T53ne5PLs
+https://www.youtube.com/watch?v=Fu4BzQNN0Qs
+
+Основные виды сортировок и примеры их реализации
+https://academy.yandex.ru/journal/osnovnye-vidy-sortirovok-i-primery-ikh-realizatsii
+
+-Bubble Sort
+https://www.geeksforgeeks.org/bubble-sort/?ref=gcse
+https://www.geeksforgeeks.org/recursive-bubble-sort/?ref=gcse
+
+-Selection sort
+https://www.geeksforgeeks.org/selection-sort/?ref=gcse
+
+-Insertion sort
+https://www.geeksforgeeks.org/insertion-sort/?ref=gcse
+
+-QuickSort
+https://www.geeksforgeeks.org/quick-sort/?ref=gcse
+
+-Merge Sort Algorithm
+https://www.geeksforgeeks.org/merge-sort/?ref=lbp
+
+-Heap Sort
+https://www.geeksforgeeks.org/heap-sort/?ref=lbp
+
+-Divide&Conquer над алгоритмом Штрассена
+https://habr.com/ru/post/313258/
+https://www.youtube.com/watch?v=D1GRgMfeRNk
+
+Коллекции java
+https://habr.com/ru/post/237043/
+https://metanit.com/java/tutorial/5.1.php
+https://www.youtube.com/watch?v=nifOyLM4TrI
+https://practice.geeksforgeeks.org/courses/Java-Collections?utm_source=gfg&utm_medium=right-bar&utm_campaign=java_collections
+
+Синхронезированные коллекции (работают с многопоточным программированием)
+https://javascopes.com/java-synchronized-collections-dd11d697/
+
+Queue
+https://www.geeksforgeeks.org/queue-interface-java/
+
+Deque
+https://www.geeksforgeeks.org/deque-interface-java-example/
+https://betacode.net/13433/java-deque
+
+Stack
+https://www.geeksforgeeks.org/stack-class-in-java/?ref=gcse
+
+ArrayList
+https://habr.com/ru/post/128269/
+https://www.geeksforgeeks.org/arraylist-in-java/?ref=gcse
+
+Linked List
+https://www.geeksforgeeks.org/data-structures/linked-list/?ref=gcse
+https://habr.com/ru/post/337558/
+
+Tree
+https://www.geeksforgeeks.org/binary-tree-data-structure/?ref=gcse#Introduction (огромный цикл статей по всем деревьям)
+https://otus.ru/journal/derevo-kak-struktura-dannyh/
+https://habr.com/ru/post/65617/
+
+Graph
+https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/?ref=gcse
+https://habr.com/ru/post/469967/
+
+Hashing Data Structure
+https://www.geeksforgeeks.org/hashing-data-structure/?ref=gcse (огромный цикл статей по hash)
+https://www.geeksforgeeks.org/hashing-in-java/?ref=gcse
+https://habr.com/ru/post/585898/
+https://www.techiedelight.com/ru/generate-sha-256-hashcode-java/
+
+Map Interface in Java
+https://www.geeksforgeeks.org/map-interface-java-examples/?ref=gcse
+https://habr.com/ru/post/421179/
+https://habr.com/ru/post/128017/
+
+Set Interface in Java
+https://vertex-academy.com/tutorials/ru/set-v-java-hashset/
+
+вопросы к собеседованию java
+https://habr.com/ru/post/505700/
+https://proglib.io/p/15-questions-for-programmers
+https://itvdn.com/ru/blog/article/250-questions-java
+https://habr.com/ru/post/485678/
+
+практика в коде и алгоритмических задачах
+https://www.codewars.com/
+https://leetcode.com/
+https://www.hackerrank.com/dashboard

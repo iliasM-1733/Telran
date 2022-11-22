@@ -53,6 +53,7 @@ public class House {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+
         House house = (House) o;
         if (this.address != house.address || this.index != house.index || this.square != house.square) {
             return false;
@@ -62,8 +63,8 @@ public class House {
 
     @Override
     public int hashCode() {
-        int result = address == null ? 0 : address.hashCode();
-        result = index == null ? result : result + index.hashCode();
+        int result = address == null ? 0 : address.hashCode() * 31;
+        result = index == null ? result * 31 : result + index.hashCode() * 31;
         result += (int) Math.round(this.square) * 31;
         return result;
     }

@@ -7,7 +7,6 @@ import java.util.Scanner;
 public class LessonTenArray {
     public static void main(String[] args) {
         tryArraysClass();
-
     }
 
     private static void tryRandomClass() {
@@ -52,9 +51,6 @@ public class LessonTenArray {
 
         int[]  nums7 = Arrays.copyOfRange(nums5, 3, 6);
         System.out.println(Arrays.toString(nums7));
-
-
-
     }
 
     private static void basicInitializingIntArray() {
