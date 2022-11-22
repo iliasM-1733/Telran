@@ -1,15 +1,17 @@
 многопоточность:
 https://dataart.team/ru/articles/mnogopotochnost-v-java-kurs-iz-shesti-lekfii
 
-Асимптотический анализ (на основе размера входных данных) в анализе сложности алгоритмов:
+Амортизационный анализ:
 https://www.geeksforgeeks.org/analysis-of-algorithms-set-1-asymptotic-analysis/?ref=ghm
 https://habr.com/ru/post/78728/
 https://proglib.io/p/analysis-of-algorithm
 https://www.youtube.com/watch?v=F9T53ne5PLs
 https://www.youtube.com/watch?v=Fu4BzQNN0Qs
+https://habr.com/ru/post/208624/
 
 Основные виды сортировок и примеры их реализации
 https://academy.yandex.ru/journal/osnovnye-vidy-sortirovok-i-primery-ikh-realizatsii
+https://www.youtube.com/watch?v=ZZuD6iUe3Pc
 
 -Bubble Sort
 https://www.geeksforgeeks.org/bubble-sort/?ref=gcse
