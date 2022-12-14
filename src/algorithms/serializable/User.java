@@ -2,11 +2,13 @@ package algorithms.serializable;
 
 import java.io.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class User implements Serializable {
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
+
         //создаем наш объект
         User user = new User();
         user.setFirstName("John");

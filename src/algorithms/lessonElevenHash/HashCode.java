@@ -55,7 +55,8 @@ public class HashCode {
         Set set = new LinkedHashSet();
 
         // Map - нужен для хранения пары ключ-значение, при этом ключи обязаны быть уникальными
-        Map<String, String> map = new HashMap<>();
+        Map<String, String> map = new LinkedHashMap<>();
+
 
 
     }
