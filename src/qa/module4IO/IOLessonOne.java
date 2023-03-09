@@ -92,7 +92,7 @@ public class IOLessonOne {
      *  https://eclipse.github.io/imagen/guide/encode/
       */
 
-    public static void practice() throws IOException {
+    public static void tryingFileOutputStream() throws IOException {
         File file = new File(ROOT_PATH + "test.txt");
         System.out.println(file.exists());
         FileOutputStream fos = new FileOutputStream(file);
