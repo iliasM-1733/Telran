@@ -6,7 +6,7 @@ import java.util.Scanner;
 /**
  * если условие в скобках выполняется (true), то выполнится команда_1,
  * в противном случае - команда_2
- * if (условие) {
+ * if (условие 1) {
  *      команда_1;
  *   }
  * else if (условие 2){
@@ -20,10 +20,34 @@ import java.util.Scanner;
  *  }
  */
 public class LessonSixIfElse {
-    static Scanner SCANNER = new Scanner(System.in);
+    static final Scanner SCANNER = new Scanner(System.in);
 
     public static void main(String[] args) {
-        isSick(false, false);
+
+        //       tryIfElseStatement(true);
+//        tryIfElseStatement(false);
+//
+//        tryElseIfStatement(0);
+//        tryElseIfStatement(-10);
+//
+//        ifElseWithString("Sunday");
+//        ifElseWithString("Friday");
+//        ifElseWithString("Monday");
+//        ifElseWithString("Wednesday");
+//
+//        isSick(true, true);
+//        isSick(false, true);
+//        isSick(true, false);
+//        isSick(false, false);
+//
+//        hikingCondition(true, true, true);
+//        hikingCondition(true, false, true);
+//        hikingCondition(true, true, false);
+//        hikingCondition(false, true, true);
+//
+//        simpleChatBot();
+
+        shoping(true, true, true, true, true, true);
     }
 
     static void tryIfElseStatement(boolean bool) {
@@ -34,14 +58,22 @@ public class LessonSixIfElse {
         }
     }
 
-    static void tryElseIfStatement(int x) {
+    static void tryElseIfStatement(long x) { // x = -102
+        boolean isEven = false;
+        boolean isMultipliedToTen = false;
+
         if (x > 0) {
             System.out.println("i print it from \"if\" statement. That means, that x is positive number.");
-            ifElseWithString("Sunday");
-        } else if (x == 0){
-            System.out.println("i print it from \"else if\" statement. That means, that x is equals to zero");
-        } else {
-            System.out.println("i print it from \"else\" statement. That means, that x is negative number.");
+        } else if (x % 2 == 0){
+            System.out.println("x is even number");
+            isEven = true;
+            // System.out.println("i print it from \"else if\" statement. That means, that x is equals to zero");
+        } else if (x % 10 == 0) {
+            System.out.println("x is multiple to 10");
+            isMultipliedToTen = true;
+            // System.out.println("i print it from \"else\" statement. That means, that x is negative number.");
+        } else if (isEven && isMultipliedToTen) {
+            System.out.println("perhaps x equals to zero");
         }
     }
 
@@ -109,4 +141,34 @@ public class LessonSixIfElse {
     }
 
 
+    static void shoping(boolean havePotato, boolean haveChicken, boolean haveCandy, boolean haveCake, boolean havePotatoCake, boolean haveCookie) {
+        if(haveChicken) {
+            System.out.println("я купил курицу");
+        }
+
+
+        if (havePotato) {
+            System.out.println("я купил картошку");
+        } else {
+            System.out.println("я купил макароны");
+        }
+
+
+
+        if(haveCandy) {
+            System.out.println("мне на всю сдачу!");
+        } else if (haveCake) {
+
+            if (havePotatoCake) {
+                System.out.println("дайте три штуки");
+            } else {
+                System.out.println("дайте тогда заварную трубочку");
+            }
+
+        } else if (haveCookie){
+            System.out.println("тогда мне печенье к чаю");
+        } else {
+            System.out.println("тогда палочку лакрицы");
+        }
+    }
 }

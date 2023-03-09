@@ -3,13 +3,35 @@ package basiс;
 import java.util.Locale;
 
 public class LessonFourMethods {
-    public static void main(String[] args) {
-//        methodOne("some arg");
-//        methodOne();
 
+    /**
+     * Метод в Java – это комплекс выражений, совокупность которых позволяет выполнить определенную операцию.
+     * Так, например, при вызове метода System.out.println(), система выполняет ряд команд для выведения сообщения
+     * в консоль.
+     *
+     *          Синтаксис
+     * modifier returnType nameOfMethod (Parameter List) {
+     *    // тело метода
+     * }
+     * Приведенный выше синтаксис включает:
+     * modifier – определяет тип доступа для метода и возможность его использования.
+     * returnType – метод может возвратить значение.
+     * nameOfMethod – указывает имя метода. Сигнатура метода включает имя метода и перечень параметров.
+     * Parameter List – перечень параметров представлен типом, порядком и количеством параметров метода.
+     * Данная опция задается произвольно, в методе может присутствовать нулевой параметр.
+     * method body – тело метода определяет метод работы с командами.
+     *
+     * Методы с возвращаемым знаечением типа void в Java не производят возврат каких-либо значений,
+     * лишь выполняет какую-то логику
+     *
+     * Перегрузка методов в Java – случай, когда в классе присутствуют два и более метода с одинаковым именем, но
+     * различными параметрами. Данный процесс отличен от переопределения методов. При переопределении методов,
+     * метод характеризуется аналогичным именем, типом, числом параметров и т.д.
+     */
+    public static void main(String[] args) {
+        /*
         String string = "one two three";
         String str = methodTwo(string);
-
 
         methodOne();
         methodOne("string");
@@ -44,31 +66,48 @@ public class LessonFourMethods {
 
         methodFive(5, "string");
         methodFive("another string", 34);
+*/
 
+//        String str = methodTwo("ssf");
+//        System.out.println(str);
+//
+//        int num = methodThree(1251);
+//        System.out.println(num);
 
+        LessonFourMethods lsf = new LessonFourMethods();
+        lsf.methodOne();
+
+    }
+
+    static void methodOne(int num) { // int num = 33;
+        System.out.println("я испек " + num + " круассанов!");
     }
 
     static void methodOne() {
-        System.out.println("do Something");
+        System.out.println("я испек круассан");
     }
 
     static void methodOne(String str) {
-        System.out.println("this is argument of methodOne with string: " + str);
-    }
-
-    static void methodOne(int str) {
-        System.out.println("this is argument of methodOne with int: " + str);
+        System.out.println("я не знаю, что это значит!? " + str);
     }
 
     static String methodTwo(String str) { // String str = "one two three";
-        str = str.toUpperCase(Locale.ROOT) + str;
+        String result = str.toUpperCase() + str;
         System.out.println("i print it from methodTwo : " + str);
-        return str; //обязаны вернуть тип String
+        return result; //обязаны вернуть тип String
     }
 
     static int methodThree(int x) {
         // ккаие-то вычисления
+
+
+
         return x * x; //обязаны вернуть тип int
+    }
+
+    static int methodThree() {
+        // ккаие-то вычисления
+        return 12; //обязаны вернуть тип int
     }
 
     int nonStaticMethodThree(int x) {

@@ -22,18 +22,33 @@ import java.util.Scanner;
 
 public class LessonEightForLoop {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int sum = 0;
 
+        for(int i = 0; i >= 0; i++){
+            int x = scanner.nextInt();
+            if(x % 2 == 1) {
+                continue;
+            }
+
+            if(x == 0) {
+                break;
+            }
+
+            sum += x;
+        }
+
+        System.out.println(sum);
     }
 
     private static void simpleCounter() {
         for(int i = 0; i <= 5; i++) {
-            System.out.print(i);
+            System.out.print(i + " ");
         }
-
     }
 
     private static void simpleReversCounter() {
-        for(int i = 10; i > 0; i--) {
+        for(int i = 10; i >= -10; i--) {
             System.out.print(i + " ");
         }
     }
@@ -69,10 +84,11 @@ public class LessonEightForLoop {
     }
 
     private static void nestedForLoop() {
-        for(int i = 1; i < 11; i++) {
-            for (int j = 1; j < 11; j++) {
+        for(int i = 1; i < 5; i++) {
+            for (int j = 1; j < 3; j++) {
                 System.out.print(i + ";" + j + " ");
             }
+
             System.out.println();
         }
     }
@@ -84,7 +100,7 @@ public class LessonEightForLoop {
 
     private static void tryingBreak() {
         for (int i = 1; i < 100; i++) {
-            if (i % 2 == 0) {
+            if (i % 2 == 0 && i != 6) {
                 continue;
             }
 

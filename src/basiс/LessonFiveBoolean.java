@@ -30,7 +30,7 @@ public class LessonFiveBoolean {
          */
         //logicalComparison();
         //logicalEquality();
-        //logicalNegation();
+        // logicalNegation();
         //logicalBinaryOperation();
         //logicalNegation();
         logicalPriority();
@@ -38,59 +38,61 @@ public class LessonFiveBoolean {
         // 2 > 3
         // "sdfsdf" == "sdfsf"
         //  3 != 34
-
-
     }
 
     static void logicalEquality() {
         // b1 = true     b2 = true      b3 = false      b4 = false
+        // x = 4    y = 5   z = -5
         String stringTrue = "true";
         String stringFalse = "false";
 
-        System.out.println(b1 == b2);
-        System.out.println(b1 == b3);
-        System.out.println(b3 == b4);
-        System.out.println(x == y);
-        System.out.println(x == 4);
-        System.out.println(stringFalse == "false");
-        System.out.println(stringTrue == stringFalse);
-        System.out.println(stringTrue.equals(stringFalse));
+        System.out.println(b1 == b2); // true
+        System.out.println(b1 == b3); // false
+        System.out.println(b3 == b4); // true
+        System.out.println(x == y); // false
+        System.out.println(x == 4); // true
+        System.out.println(stringFalse == "false"); // true
+        System.out.println(stringTrue == stringFalse); // false
+        System.out.println(stringTrue.equals(stringFalse)); // false
         // System.out.println(stringFalse == x);
     }
 
     static void logicalComparison() {
         // x = 4    y = 5   z = -5
-        System.out.println(x > y);
-        System.out.println(x > 4);
-        System.out.println(x < 4);
-        System.out.println(y >= z);
-        System.out.println(y <= z);
-        System.out.println(z <= -5);
+        System.out.println(x > y); // false
+        System.out.println(x > 4); // false
+        System.out.println(x < 4); // false
+        System.out.println(y >= z); // true
+        System.out.println(y <= z); // false
+        System.out.println(z <= -5); // true
         // System.out.println(b1 > b2);
     }
 
     static void logicalBinaryOperation() {
+        // b1 = true     b2 = true      b3 = false      b4 = false
         boolean isCupFull = true;
         boolean isBottleFull = false;
 
-        System.out.println(isCupFull && isBottleFull);
-        System.out.println(b1 && b2);
-        System.out.println(b1 && b3);
-        System.out.println(b4 && b4);
+        System.out.println(isCupFull && isBottleFull); // false
+        System.out.println(b1 && b2); // true
+        System.out.println(b1 && b3); // false
+        System.out.println(b4 && b4); // false
 
 
         System.out.println("isCupFull || isBottleFull = " + (isCupFull || isBottleFull));
-        System.out.println(b1 || b2);
-        System.out.println(b1 || b3);
-        System.out.println(b4 || b4);
+        System.out.println(b1 || b2); // true
+        System.out.println(b1 || b3); // true
+        System.out.println(b4 || b4); // false
 
         System.out.println("isCupFull ^ isBottleFull = " + (isCupFull ^ isBottleFull));
         System.out.println(b1 ^ b2); // false
         System.out.println(b1 ^ b3); // true
+        System.out.println(b3 ^ b2); // true
         System.out.println(b4 ^ b4); // false
     }
 
     static void logicalNegation() {
+        // x = 4    y = 5   z = -5
         System.out.println(x != 4); // false
         System.out.println(x != 5); // true
         System.out.println(!(x == 4)); // false
@@ -103,15 +105,15 @@ public class LessonFiveBoolean {
         System.out.println(!(b1 && b3)); // true
         System.out.println(!(b3 && b4)); // true
 
-        System.out.println(!b1 || b2); // true
-        System.out.println(!(b1 || b2));
-        System.out.println(!(b1 || b3));
-        System.out.println(!(b3 || b4));
+        System.out.println(!b1 || b2); // true  (false || true)
+        System.out.println(!(b1 || b2)); // false  !(true || true)
+        System.out.println(!(b1 || b3)); // false  !(true || false)
+        System.out.println(!(b3 || b4)); // true   !(false || false)
 
-        System.out.println(!b1 ^ b2);
-        System.out.println(!(b1 ^ b2));
-        System.out.println(!(b1 ^ b3));
-        System.out.println(!(b3 ^ b4));
+        System.out.println(!b1 ^ b2); // true
+        System.out.println(!(b1 ^ b2)); // true
+        System.out.println(!(b1 ^ b3)); // false
+        System.out.println(!(b3 ^ b4)); // true
     }
 
     static void logicalPriority() {
@@ -122,10 +124,16 @@ public class LessonFiveBoolean {
          * 3. унарные опреации
          * 4. логическое XOR
          * 5. логическое OR
-         * 6. логическое И
+         * 6. логическое ИЛИ
          */
 
         System.out.println((true && (false || false) ^ !(4 > x)));
+        System.out.println(true || true ^ (!false ^ true) || false && !(false && true));
+        // true && false ^ !false
+        // true && false ^ true
+        // true && true
+        // true
+
     }
 
 

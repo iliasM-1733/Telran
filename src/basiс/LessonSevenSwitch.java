@@ -1,5 +1,7 @@
 package basiс;
 
+import org.w3c.dom.ls.LSOutput;
+
 /**
  * Switch и case обязательные ключевые слова. Ключевые слова break и default являются необязательными. Ключевое слово
  * break останавливает выполнение всего оператора switch, а не только одного case.
@@ -8,46 +10,68 @@ package basiс;
  * в default ветке является необязательным и может быть опущено.
  * Раздел case может содержать любой блок кода, даже вложенный switch оператор, однако рекомендуется по возможности
  * избегать глубоко вложенных структур кода.
+ *
+ * Тип данных для оператора выбора switch в Java должен быть одним из следующих:
+ *
+ * byte, short, char, int.
+ * Их классы-обёртки Byte, Short, Character, Integer.
+ * String (начиная с Java 7).
+ * Перечисление (Enum).
  */
 
 public class LessonSevenSwitch {
     public static void main(String[] args) {
+//        switchWithBreak("one");
+//        switchWithBreak("four");
+//        switchWithBreak("nine");
+//
+//
+//
+//        switchWithoutBreak("one");
+//        switchWithoutBreak("four");
+//        switchWithoutBreak("nine");
+//
+//        switchWithEnum(Transport.CAR);
+        switchWithEnum(Transport.BUS);
+//        switchWithEnum(Transport.ON_FOOT);
+//        switchWithEnum("CAR");
+//
+//        switchWithEnum(DayOfWeek.MONDAY);
+//        switchWithEnum(DayOfWeek.THURSDAY);
+//        switchWithEnum(DayOfWeek.SUNDAY);
+//
+//        tryingTernaryOperator();
+
+
 
     }
     private enum DayOfWeek {
         MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY;
     }
 
-
-    public static void switchWithEnum(int day) {
-        if (day > 7) {
-            System.out.println("incorrect number");
-            return;
-        }
-
-        switch (day) {
-            case 1:
-            case 2:
-            case 3:
-                System.out.println("don't forget about Java basic course!");
-            case 4:
-            case 5:
-                System.out.println("today is working day");
-                break;
-            case 6:
-            default:
-                System.out.println("today is weekend");
-                break;
-        }
+    private enum Transport {
+        CAR, BUS, TRAIN, BICYCLE, ON_FOOT;
     }
 
-    public static void switchWithEnum(Transport transport) {
-        switch (transport) {
-            case CAR -> System.out.println("you will be on final point in 15 minutes with a car");
-            case BUS -> System.out.println("you will be on final point in 20 minutes with a bus");
-            case TRAIN -> System.out.println("you will be on final point in 22 minutes with a train");
-            case BICYCLE -> System.out.println("you will be on final point in 17 minutes with a bicycle");
-            case ON_FOOT -> System.out.println("you will be on final point in 15 minutes by foot");
+    public static void switchWithBreak(String num) {
+        switch (num) {
+            case "one":
+                System.out.println("This string is meaning 1 number");
+                break;
+            case "two":
+                System.out.println("This string is meaning 2 number");
+                break;
+            case "three":
+                System.out.println("This string is meaning 3 number");
+                break;
+            case "four":
+                System.out.println("This string is meaning 4 number");
+                break;
+            case "five":
+                System.out.println("This string is meaning 5 number");
+                break;
+            default:
+                System.out.println("i dont know what does it means");
         }
     }
 
@@ -67,6 +91,34 @@ public class LessonSevenSwitch {
                 System.out.println("i dont know what does it means");
         }
     }
+
+    public static void switchWithEnum(Transport transport) {
+        switch (transport) {
+            case CAR -> System.out.println("you will be on final point in 15 minutes with a car");
+            case BUS -> System.out.println("you will be on final point in 20 minutes with a bus");
+            case TRAIN -> System.out.println("you will be on final point in 22 minutes with a train");
+            case BICYCLE -> System.out.println("you will be on final point in 17 minutes with a bicycle");
+            case ON_FOOT -> System.out.println("you will be on final point in 15 minutes by foot");
+        }
+    }
+
+    public static void switchWithEnum(DayOfWeek day) {
+        switch (day) {
+            case MONDAY:
+            case TUESDAY:
+            case WEDNESDAY:
+                System.out.println("don't forget about Java basic course!");
+            case THURSDAY:
+            case FRIDAY:
+                System.out.println("today is working day");
+                break;
+            case SATURDAY:
+            default:
+                System.out.println("today is weekend");
+                break;
+        }
+    }
+
 
     public static double calculateFigureSquare(String figureType) {
         switch (figureType) {
@@ -121,6 +173,7 @@ public class LessonSevenSwitch {
         System.out.printf("minimum of two variables equals %d\n", min);
 
         boolean isEven = (x % 2 == 0) ? true : false;
+
         if (isEven) {
             System.out.println("x is even number");
         } else {
@@ -128,7 +181,7 @@ public class LessonSevenSwitch {
         }
 
         // незаконная в Java запись:
-        // (x % 2 == 0) ? System.out.println("x is even number") : System.out.println("x is odd number");;
+        // (x % 2 == 0) ? System.out.println("x is even number") : System.out.println("x is odd number");
 
         int maxOfThree = (x > y) ? ((x > z) ? x : z) : ((y > z) ? y : z);
         System.out.println(maxOfThree);
