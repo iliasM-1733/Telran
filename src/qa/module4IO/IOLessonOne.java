@@ -17,11 +17,7 @@ public class IOLessonOne {
     private final static String ROOT_PATH = System.getProperty("user.dir") + "/src/qa/module4IO/";
 
     public static void main(String[] args) throws IOException {
-        practice();
-        System.out.println(ROOT_PATH);
-
-
-
+        tryingFileOutputStream();
     }
 
     public static void tryingScanner() {
@@ -100,6 +96,5 @@ public class IOLessonOne {
         fos.write(str.getBytes());
         fos.close();
         System.out.println(file.exists());
-
     }
 }
