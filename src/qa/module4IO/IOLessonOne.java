@@ -16,8 +16,9 @@ import java.util.Scanner;
 public class IOLessonOne {
     private final static String ROOT_PATH = System.getProperty("user.dir") + "/src/qa/module4IO/";
 
+
     public static void main(String[] args) throws IOException {
-        tryingFileOutputStream();
+        tryingErrorStream();
     }
 
     public static void tryingScanner() {
@@ -31,15 +32,22 @@ public class IOLessonOne {
     public static void tryingInputStream() {
         String path = "file.txt";
         try  {
-            InputStream stream = new FileInputStream(ROOT_PATH + path);
+            InputStream stream = new FileInputStream(ROOT_PATH + path + 1);
             Reader reader = new InputStreamReader(stream);
             int data = reader.read();
             while (data != -1) {
                 System.out.print((char) data);
                 data = reader.read();
             }
+        } catch (FileNotFoundException fileNotFoundException) {
+            System.err.println(fileNotFoundException.getMessage());
+        } catch (IOException ioException) {
+            System.err.println("IOexception");
         } catch (Exception e) {
-            e.printStackTrace();
+            String error = e.getMessage();
+            System.err.printf("%s\n", error);
+        } finally {
+            System.out.println("\n\n\nfinally");
         }
     }
 
@@ -56,9 +64,11 @@ public class IOLessonOne {
             x = Integer.parseInt(br.readLine());
         } catch (IOException e) {
             throw new RuntimeException(e);
+        } finally {
+            System.out.println(x);
         }
 
-        System.out.println(x);
+
     }
 
     public static void tryingErrorStream() {
