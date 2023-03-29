@@ -1,6 +1,12 @@
 многопоточность:
 https://dataart.team/ru/articles/mnogopotochnost-v-java-kurs-iz-shesti-lekfii
 
+визуализация алгоритмов:
+https://visualgo.net/en/sorting
+
+паттерны программирования:
+https://refactoring.guru/ru
+
 Амортизационный анализ:
 https://www.geeksforgeeks.org/analysis-of-algorithms-set-1-asymptotic-analysis/?ref=ghm
 https://habr.com/ru/post/78728/
