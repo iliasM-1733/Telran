@@ -1,30 +1,35 @@
 package basiс;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class LessonThree {
     public static void main(String[] args) {
-        //primitiveOperation();
+        //primitives();
+        // primitiveOperation();
         //informationAboutString();
-        //basicStringOperations()
+        //basicStringOperations();
         //simpleMathOperationsInt();
-        simpleMathOperationsDouble();
+        //simpleMathOperationsDouble();
     }
+
 
     static void primitives() {
         // для целых чисел
-        byte myByte = 127; // 8 bit -128 to 127 -> total 256 dif digits -> 2^8
+        byte myByte = 127; // 8 bit -128 to 127 -> total 256 dif digits -> 2^8 ->
         short myShort = 32_767; // 16 bit -32_768 to 32_767 -> 2^16
         int myInt = 2_147_483_647; // default 32 bit
         long myLong = 9_223_372_036_854_775_807L; // 64 bit
+
 
         // дробные числа
         float myFloat = 1.0F; // 32 bit
         double myDouble = 1.0; // default 64 bit
 
+
         // символы см ASCII table
         char myChar = 'r'; // 16 bit
-        char mySecondChar = 85;
+        char mySecondChar = 107; // U
 
         // логический тип данных
         boolean myBoolean = false; // true or false
@@ -45,12 +50,13 @@ public class LessonThree {
 
     static void primitiveOperation() {
         /**
-         * не явное приведение тпипов не требует от программиста указывать и подтверждать данную операцию
+         * не явное приведение типов не требует от программиста указывать и подтверждать данную операцию
          */
         byte myByte = 10;
         short myShort = myByte;
         int myInt = myShort;
         long myLong = myInt;
+
         float myFloat = myLong;
         double myDouble = myFloat;
 
@@ -65,26 +71,34 @@ public class LessonThree {
         /** при этом все равно следует учитвать размерность каждого типа
          */
         myFloat = Long.MAX_VALUE;
-        System.out.println(Long.MAX_VALUE);
-        System.out.println(myFloat);
+        System.out.println("Long.MAX_VALUE = " + Long.MAX_VALUE);
+        System.out.println("myFloat = Long.MAX_VALUE = " + myFloat);
 
         /** явное приведение работает в том случае, когда мы не можем прямо кастирвоать данные из одного типа в другой,
          *  по причине того, что это может вызвать ошибки.
          */
-        System.out.println("явное приведение");
-        myDouble = 1_000.00;
-        myFloat = (float) myDouble;
+        System.out.println("\nявное приведение");
+        myDouble = 1_000.453401234567;
+        myFloat = (float) myDouble; //
+
         myLong = (long) myFloat;
         myInt = (int) myLong;
-        myShort = (short) myInt;
-        myByte = (byte) myShort;
+        myShort = (short) myInt; // 32_765 32_766 32_767 -32_768
+        myByte = (byte) myShort; // 125 126 127 -128 -127 -126
 
-        System.out.println(myByte);
-        System.out.println(myShort);
-        System.out.println(myInt);
-        System.out.println(myLong);
-        System.out.println(myFloat);
-        System.out.println(myDouble);
+
+        System.out.println("myDouble = " + myDouble);
+        System.out.println("myFloat = (float) myDouble; = " + myFloat);
+
+        System.out.println("myLong = (long) myFloat; = " + myLong);
+        System.out.println("myInt = (int) myLong; = " + myInt);
+        System.out.println("myShort = (short) myInt; = " + myShort);
+        System.out.println("myByte = (byte) myShort; =" + myByte);
+        System.out.println();
+
+
+
+
 
         /** также допустимо указать в скобках другой тип данных, который не требует явного приведения */
         myLong = 1_000;
@@ -108,7 +122,7 @@ public class LessonThree {
         String str1 = "Java";
         String str2 = new String(); // пустая строка
         String str3 = new String(new char[]{'h', 'e', 'l', 'l', 'o'});
-        String str4 = new String(new char[]{'w', 'e', 'l', ' ', 'c', 'o', 'm', 'e'}, 3, 4);//3 -начальный индекс, 4 -кол-во символов
+        String str4 = new String(new char[]{'w', 'e', 'l', ' ', 'c', 'o', 'm', 'e'}, 3, 5);//3 -начальный индекс, 4 -кол-во символов
 
         System.out.println(str1); // Java
         System.out.println(str2); //
@@ -126,11 +140,13 @@ public class LessonThree {
          */
 
         String str5 = "Java";
-        System.out.println(str5.length()); // 4
+        System.out.println(
+                str5.length()
+        ); // 4
 
         /** А с помощью метода toCharArray() можно обратно преобразовать строку в массив символов: */
 
-        String str6 = new String(new char[]{'h', 'e', 'l', 'l', 'o'});
+        String str6 = "any string";
         System.out.println(str6);
         char[] helloArray = str6.toCharArray();
         System.out.println(Arrays.toString(helloArray));
@@ -190,7 +206,9 @@ public class LessonThree {
         /** При этом если в операции сложения строк используется нестроковый объект, например, число,
          * то этот объект преобразуется к строке:
          */
-        String str4 = "Год " + 2022;
+        String str4 = "Год " + 20 + 23; // -> "Год 20" + 23 -> "Год 2023"
+        System.out.println(str4);
+        str4 = 20 + 23 + " Год"; // 43 + " Год" -> "43 Год"
         System.out.println(str4);
 
         /**
@@ -211,9 +229,13 @@ public class LessonThree {
          *         Он принимает индекс, по которому надо получить символов, и возвращает извлеченный символ:
          */
 
-        String str7 = "Java";
-        char c = str7.charAt(2);
+        String str7 = "Java"; // ['J', 'a', 'v', 'a']   str.length() - 1
+        char c = str7.charAt(0); // - первый символ
         System.out.println(c); // v
+        int indexOfLastSymbol = str7.length() - 1; // индекс последнего символа всегда длина строки - 1
+        c = str7.charAt(indexOfLastSymbol);
+        System.out.println(c);
+
 
         /**
          * Сравнение строк
@@ -295,6 +317,7 @@ public class LessonThree {
         // 21 / 7 -> 3 (0/ 7)
         // 7 / 21 -> 0 (7 / 21)
         // 19999 / 10000 -> 1 (9999/10_000)
+        //5 / 17 -> 0 (5 /17)
 
         // Остаток от деления
         int resultModulus = operand1 % operand2;
@@ -309,6 +332,9 @@ public class LessonThree {
         // 15 % 7 -> 1
         // 7 % 15 -> 7
     //  1034 -> "10.34$" -> 10.25 -> 0.07 + opt.10.25
+
+        // int  f = 10.4;
+        // error
         }
 
 

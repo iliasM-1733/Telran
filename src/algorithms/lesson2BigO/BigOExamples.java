@@ -24,10 +24,8 @@ import java.util.List;
  */
 public class BigOExamples {
     public static void main(String[] args) {
-
-
+        
     }
-
 
     // O(1)
     static int getLastElem(int[] nums) {
