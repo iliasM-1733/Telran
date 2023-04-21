@@ -1,17 +1,51 @@
 package basiс;
 
-
-import java.io.File;
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class LessonThree {
     public static void main(String[] args) {
-        informationAboutString();
+        //primitiveOperation();
+        //informationAboutString();
+        //basicStringOperations()
+        //simpleMathOperationsInt();
+        simpleMathOperationsDouble();
     }
 
-    static void primitiveOperation(){
-        /** не явное приведение тпипов не требует от программиста указывать и подтверждать данную операцию
+    static void primitives() {
+        // для целых чисел
+        byte myByte = 127; // 8 bit -128 to 127 -> total 256 dif digits -> 2^8
+        short myShort = 32_767; // 16 bit -32_768 to 32_767 -> 2^16
+        int myInt = 2_147_483_647; // default 32 bit
+        long myLong = 9_223_372_036_854_775_807L; // 64 bit
+
+        // дробные числа
+        float myFloat = 1.0F; // 32 bit
+        double myDouble = 1.0; // default 64 bit
+
+        // символы см ASCII table
+        char myChar = 'r'; // 16 bit
+        char mySecondChar = 85;
+
+        // логический тип данных
+        boolean myBoolean = false; // true or false
+
+
+        System.out.println(myByte);
+        System.out.println(myShort);
+        System.out.println(myInt);
+        System.out.println(myLong);
+
+        System.out.println("myFloat / 3 = " + myFloat / 3);
+        System.out.println("myDouble / 3 = " + myDouble / 3);
+
+        System.out.println(myChar);
+        System.out.println("mySecondChar = " + mySecondChar);
+        System.out.println(myBoolean);
+    }
+
+    static void primitiveOperation() {
+        /**
+         * не явное приведение тпипов не требует от программиста указывать и подтверждать данную операцию
          */
         byte myByte = 10;
         short myShort = myByte;
@@ -55,6 +89,9 @@ public class LessonThree {
         /** также допустимо указать в скобках другой тип данных, который не требует явного приведения */
         myLong = 1_000;
         myInt = (short) myLong;
+
+        // simpleMathOperationsInt();
+        simpleMathOperationsDouble();
     }
 
     static void informationAboutString() {
@@ -70,7 +107,7 @@ public class LessonThree {
          */
         String str1 = "Java";
         String str2 = new String(); // пустая строка
-        String str3 = new String(new char[] {'h', 'e', 'l', 'l', 'o'});
+        String str3 = new String(new char[]{'h', 'e', 'l', 'l', 'o'});
         String str4 = new String(new char[]{'w', 'e', 'l', ' ', 'c', 'o', 'm', 'e'}, 3, 4);//3 -начальный индекс, 4 -кол-во символов
 
         System.out.println(str1); // Java
@@ -93,7 +130,7 @@ public class LessonThree {
 
         /** А с помощью метода toCharArray() можно обратно преобразовать строку в массив символов: */
 
-        String str6 = new String(new char[] {'h', 'e', 'l', 'l', 'o'});
+        String str6 = new String(new char[]{'h', 'e', 'l', 'l', 'o'});
         System.out.println(str6);
         char[] helloArray = str6.toCharArray();
         System.out.println(Arrays.toString(helloArray));
@@ -124,28 +161,20 @@ public class LessonThree {
         // System.out.println(str10.length() == 0);
     }
 
+    /** Основные методы класса String
+
+     toLowerCase(): переводит все символы строки в нижний регистр
+     toUpperCase(): переводит все символы строки в верхний регистр
+     replace(): заменяет в строке одну подстроку на другую
+     trim(): удаляет начальные и конечные пробелы
+     charAt(): возвращает символ строки по индексу
+     equals(): сравнивает строки с учетом регистра
+     equalsIgnoreCase(): сравнивает строки без учета регистра
+     indexOf(): находит индекс первого вхождения подстроки в строку
+     substring(): возвращает подстроку, начиная с определенного индекса до конца или до определенного индекса
+     */
     static void basicStringOperations() {
-        /** Основные методы класса String
-         Основные операции со строками раскрывается через методы класса String, среди которых можно выделить следующие:
-         concat(): объединяет строки
-         valueOf(): преобразует объект в строковый вид
-         join(): соединяет строки с учетом разделителя
-         сompareTo(): сравнивает две строки
-         charAt(): возвращает символ строки по индексу
-         getChars(): возвращает группу символов
-         equals(): сравнивает строки с учетом регистра
-         equalsIgnoreCase(): сравнивает строки без учета регистра
-         regionMatches(): сравнивает подстроки в строках
-         indexOf(): находит индекс первого вхождения подстроки в строку
-         lastIndexOf(): находит индекс последнего вхождения подстроки в строку
-         startsWith(): определяет, начинается ли строка с подстроки
-         endsWith(): определяет, заканчивается ли строка на определенную подстроку
-         replace(): заменяет в строке одну подстроку на другую
-         trim(): удаляет начальные и конечные пробелы
-         substring(): возвращает подстроку, начиная с определенного индекса до конца или до определенного индекса
-         toLowerCase(): переводит все символы строки в нижний регистр
-         toUpperCase(): переводит все символы строки в верхний регистр
-         */
+
 
         /** Соединение строк
          *
@@ -176,49 +205,15 @@ public class LessonThree {
         str5 = str6.concat(str5); // HelloJava
         System.out.println(str5);
 
-
-        /** Метод concat() принимает строку, с которой надо объединить вызывающую строку, и возвращает соединенную строку.
-         *         Еще один метод объединения - метод join() позволяет объединить строки с учетом разделителя.
-         *         Например, выше две строки сливались в одно слово "HelloJava", но в идеале мы бы хотели, чтобы две
-         *         подстроки были разделены пробелом. И для этого используем метод join():
-         *
-         *        Метод join является статическим. Первым параметром идет разделитель, которым будут разделяться
-         *        подстроки в общей строке, а все последующие параметры передают через запятую произвольный набор
-         *        объединяемых подстрок - в данном случае две строки, хотя их может быть и больше
-         */
-
-        String str7 = "Java";
-        String str8 = "Hello";
-        String str9 = String.join("; ", str2, str1); // Hello Java
-        System.out.println(str9);
-
-
         /**         Извлечение символов и подстрок
          *
          *         Для извлечения символов по индексу в классе String определен метод char charAt(int index).
          *         Он принимает индекс, по которому надо получить символов, и возвращает извлеченный символ:
          */
 
-        String str10 = "Java";
-        char c = str10.charAt(2);
+        String str7 = "Java";
+        char c = str7.charAt(2);
         System.out.println(c); // v
-
-        /** Как и в массивах индексация начинается с нуля.
-         *         Если надо извлечь сразу группу символов или подстроку, то можно использовать метод
-         *         getChars(int srcBegin, int srcEnd, char[] dst, int dstBegin). Он принимает следующие параметры:
-         *         srcBegin: индекс в строке, с которого начинается извлечение символов
-         *         srcEnd: индекс в строке, до которого идет извлечение символов
-         *         dst: массив символов, в который будут извлекаться символы
-         *         dstBegin: индекс в массиве dst, с которого надо добавлять извлеченные из строки символы
-         */
-
-        String str11 = "Hello world!";
-        int start = 6;
-        int end = 11;
-        char[] dst=new char[end - start];
-        str11.getChars(start, end, dst, 0);
-        System.out.println(dst); // world
-
 
         /**
          * Сравнение строк
@@ -229,35 +224,6 @@ public class LessonThree {
         String str13 = "hello";
         System.out.println(str12.equals(str13)); // false
         System.out.println(str12.equalsIgnoreCase(str13)); // true
-        /**
-         * В отличие от сравнения числовых и других данных примитивных типов для строк не применяется знак равенства ==.
-         * Вместо него надо использовать метод equals().
-         * Еще один специальный метод regionMatches() сравнивает отдельные подстроки в рамках двух строк.
-         * Он имеет следующие формы:
-         */
-
-        String str14 = "Hello world";
-        String str15 = "I work";
-        boolean result = str14.regionMatches(6, str15, 2, 3);
-        System.out.println(result); // true
-
-        /** В данном случае метод сравнивает 3 символа с 6-го индекса первой строки ("wor") и 3 символа со 2-го индекса
-         * второй строки ("wor"). Так как эти подстроки одинаковы, то возвращается true.
-         *
-         * И еще одна пара методов int compareTo(String str) и int compareToIgnoreCase(String str) также позволяют
-         * сравнить две строки, но при этом они также позволяют узнать больше ли одна строка, чем другая или нет.
-         * Если возвращаемое значение больше 0, то первая строка больше второй, если меньше нуля, то, наоборот,
-         * вторая больше первой. Если строки равны, то возвращается 0.
-         * Для определения больше или меньше одна строка, чем другая, используется лексикографический порядок.
-         * То есть, например, строка "A" меньше, чем строка "B", так как символ 'A' в алфавите стоит перед символом 'B'.
-         * Если первые символы строк равны, то в расчет берутся следующие символы. Например:
-         */
-        String str16 = "hello";
-        String str17 = "world";
-        String str18 = "hell";
-
-        System.out.println(str16.compareTo(str17)); // -15 - str16 меньше чем str17
-        System.out.println(str16.compareTo(str18)); // 1 - str16 больше чем str18
 
         /**
          * Поиск в строке
@@ -295,14 +261,85 @@ public class LessonThree {
         String str23 = "Hello World";
         System.out.println(str23.toLowerCase()); // hello world
         System.out.println(str23.toUpperCase()); // HELLO WORLD
+    }
 
-        /**
-         * Метод split() позволяет разбить строку на подстроки по определенному разделителю. Разделитель -
-         * какой-нибудь символ или набор символов передается в качестве параметра в метод. Например, разобьем
-         * текст на отдельные слова:
-         */
-        String text = "Hello, dear friends!";
-        String[] words = text.split(" ");
-        System.out.println(Arrays.toString(words));
+    /**
+     * В этом примере мы объявляем две переменные operand1 и operand2, содержащие целочисленные значения.
+     * Затем мы выполняем простые математические операции с этими значениями, такие как сложение, вычитание,
+     * умножение, целочисленное деление и остаток от деления. Результат каждой операции сохраняется в отдельной
+     * переменной и выводится на экран вместе с соответствующими комментариями.
+     */
+    public static void simpleMathOperationsInt() {
+        // Объявляем переменные для операндов
+        int operand1 = 5;
+        int operand2 = 3;
+
+        // Сложение
+        int resultAddition = operand1 + operand2;
+        System.out.println(operand1 + " + " + operand2 + " = " + resultAddition);
+
+        // Вычитание
+        int resultSubtraction = operand1 - operand2;
+        System.out.println(operand1 + " - " + operand2 + " = " + resultSubtraction);
+
+        // Умножение
+        int resultMultiplication = operand1 * operand2;
+        System.out.println(operand1 + " * " + operand2 + " = " + resultMultiplication);
+
+        // Целочисленное деление
+        int resultDivision = operand1 / operand2;
+        System.out.println(operand1 + " / " + operand2 + " = " + resultDivision);
+
+        // 5 / 3 - > 1 (2/3)
+        // 17 / 5 -> 3 (2/5)
+        // 21 / 7 -> 3 (0/ 7)
+        // 7 / 21 -> 0 (7 / 21)
+        // 19999 / 10000 -> 1 (9999/10_000)
+
+        // Остаток от деления
+        int resultModulus = operand1 % operand2;
+        System.out.println(operand1 + " % " + operand2 + " = " + resultModulus);
+        // 5 % 3 -> 1 (2 / 3)
+
+        // 6 % 4 -> 1 (2 / 4) ->
+
+        // 9 % 5 -> 9 - 1*5 -> 4/5
+        // 4 % 3 ->
+        // 8 % 3 -> 2
+        // 15 % 7 -> 1
+        // 7 % 15 -> 7
+    //  1034 -> "10.34$" -> 10.25 -> 0.07 + opt.10.25
+        }
+
+
+
+    /**
+     * В этом примере кода мы объявляем две переменные типа double (a и b) и выполняем на них простые математические
+     * операции, такие как сложение, вычитание, умножение, деление и нахождение остатка от деления.
+     *
+     * Обратите внимание, что для чисел типа double используются точки вместо запятых для разделения
+     * дробной и целой части числа. Кроме того, для операции нахождения остатка от деления используется знак %,
+     * а не mod, как в примере для целочисленных значений.
+     */
+    public static void simpleMathOperationsDouble() {
+        // Объявляем две переменные типа double
+        double a = 10.5;
+        double b = 3.2;
+
+        // Примеры математических операций
+        double sum = a + b; // Сложение
+        double diff = a - b; // Вычитание
+        double product = a * b; // Умножение
+        double quotient = a / b; // Деление
+
+
+        double remainder = a % b; // Остаток от деления
+
+        // Выводим результаты операций
+        System.out.println("Сумма a и b = " + sum);
+        System.out.println("Разность a и b = " + diff);
+        System.out.println("Произведение a и b = " + product);
+        System.out.println("Частное a и b = " + quotient);
+        System.out.println("Остаток от деления a на b = " + remainder);
     }
 }

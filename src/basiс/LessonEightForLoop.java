@@ -22,23 +22,7 @@ import java.util.Scanner;
 
 public class LessonEightForLoop {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int sum = 0;
-
-        for(int i = 0; i >= 0; i++){
-            int x = scanner.nextInt();
-            if(x % 2 == 1) {
-                continue;
-            }
-
-            if(x == 0) {
-                break;
-            }
-
-            sum += x;
-        }
-
-        System.out.println(sum);
+        someMethod();
     }
 
     private static void simpleCounter() {
@@ -48,7 +32,7 @@ public class LessonEightForLoop {
     }
 
     private static void simpleReversCounter() {
-        for(int i = 10; i >= -10; i--) {
+        for(int i = 0; i >= -10; i--) {
             System.out.print(i + " ");
         }
     }
@@ -67,7 +51,7 @@ public class LessonEightForLoop {
         System.out.println(sum);
     }
 
-    private static boolean calculateIsPrimeNumber(int num) {
+    private static boolean calculateIsPrimeNumber(int num) { // num = 5
         if (num < 2) {
             return false;
         }
@@ -124,6 +108,7 @@ public class LessonEightForLoop {
             }
             System.out.println();
         }
+
         System.out.println("I've finished nestedForLoopWithBreak() method");
     }
 
@@ -142,7 +127,8 @@ public class LessonEightForLoop {
 
     private static void nestedForLoopWithReturn() {
         System.out.println("I start nestedForLoopWithReturn() method");
-        for(int i = 0; i < 11; i++) {
+
+         for(int i = 0; i < 11; i++) {
             for (int j = 0; j < 11; j++) {
                 if (j == i) {
                     return;
@@ -151,12 +137,15 @@ public class LessonEightForLoop {
             }
             System.out.println();
         }
+
+
         System.out.println("I've finished nestedForLoopWithReturn() method");
     }
 
     private static void someMethod() {
         Scanner scanner = new Scanner(System.in);
         for (int i = 0; true; i = 0) {
+            System.out.println("Enter number:");
             int x = scanner.nextInt();
             if(x == 10) {
                 System.out.println("stop it!");

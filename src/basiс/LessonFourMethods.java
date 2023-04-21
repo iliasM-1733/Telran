@@ -1,5 +1,8 @@
 package basiс;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.Locale;
 
 public class LessonFourMethods {
@@ -28,7 +31,7 @@ public class LessonFourMethods {
      * различными параметрами. Данный процесс отличен от переопределения методов. При переопределении методов,
      * метод характеризуется аналогичным именем, типом, числом параметров и т.д.
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException { // String[] args
         /*
         String string = "one two three";
         String str = methodTwo(string);
@@ -67,17 +70,30 @@ public class LessonFourMethods {
         methodFive(5, "string");
         methodFive("another string", 34);
 */
-
 //        String str = methodTwo("ssf");
 //        System.out.println(str);
 //
 //        int num = methodThree(1251);
 //        System.out.println(num);
 
-        LessonFourMethods lsf = new LessonFourMethods();
-        lsf.methodOne();
+//        LessonFourMethods lsf = new LessonFourMethods();
+//        lsf.methodOne();
 
+        double myDouble = substraction(10324, 354);
+        // ...
+
+        System.out.println(myDouble);
     }
+
+    static double substraction(double x, double y) {
+
+        double result = x - y;
+
+        return result;
+    }
+
+
+
 
     static void methodOne(int num) { // int num = 33;
         System.out.println("я испек " + num + " круассанов!");
@@ -99,8 +115,6 @@ public class LessonFourMethods {
 
     static int methodThree(int x) {
         // ккаие-то вычисления
-
-
 
         return x * x; //обязаны вернуть тип int
     }

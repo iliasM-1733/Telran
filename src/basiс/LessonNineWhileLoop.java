@@ -21,9 +21,7 @@ public class LessonNineWhileLoop {
     static final Scanner SCANNER = new Scanner(System.in);
 
     public static void main(String[] args) {
-        simpleDoWhileLoop(100);
-        simpleDoWhileLoop(5);
-
+        tryReturnWithWhile();
     }
 
 
@@ -35,7 +33,7 @@ public class LessonNineWhileLoop {
      */
     private static void simpleWhileLoop() {
         int x = 0;
-        while (x < 10) {
+        while (x < 3) {
             System.out.print(x + " ");
             x++;
         }
@@ -51,12 +49,13 @@ public class LessonNineWhileLoop {
      */
     private static void simpleWhileLoop(int x) {
 
-        while (x > 0) {
+        while (x > 0) { // 0
 
             System.out.print(x + " ");
-            x++;
+            x--; // 0
 
         }
+
         System.out.println();
     }
 
@@ -72,7 +71,7 @@ public class LessonNineWhileLoop {
      */
     private static void whileLoopWithChar() {
         char letter = 0;
-        while (letter < 128) {
+        while (letter < 128) { // false
             System.out.print("\'" + letter + "\'" + " ");
             letter++;
         }
@@ -95,13 +94,13 @@ public class LessonNineWhileLoop {
      * В случае, если передать в качестве аргумента 9 - код выполнится один раз, переменная х увеличится на один,
      * далее произойдет проверка и цикл остановится.
      */
-    private static void simpleDoWhileLoop(int x) {
+    private static void simpleDoWhileLoop(int x) { // x = 8
         do {
 
-            System.out.println("i print it from do-while loop");
-            x++;
+            System.out.println("i print it from do-while loop. x = " + x);
+            x++; // x = 10
 
-        } while (x < 10);
+        } while (x < 10);  // true or false
     }
 
     /**
@@ -194,7 +193,7 @@ public class LessonNineWhileLoop {
         int sum = 0;
         while (true) {
             int x = SCANNER.nextInt();
-            if (x % 2 == 0) {
+            if (x % 2 == 0 && x != 0) {
                 continue;
             } else if (x == 0) {
                 break;
@@ -222,11 +221,12 @@ public class LessonNineWhileLoop {
         while (true) {
             int x = SCANNER.nextInt();
             if (x == 0) {
+                System.out.println(sum);
                 return;
             }
             sum += x;
         }
-        //System.out.println(sum);
+//        System.out.println(sum);
     }
 
 }

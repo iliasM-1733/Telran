@@ -33,11 +33,17 @@ public class LessonFiveBoolean {
         // logicalNegation();
         //logicalBinaryOperation();
         //logicalNegation();
-        logicalPriority();
+        //logicalPriority();
+
 
         // 2 > 3
         // "sdfsdf" == "sdfsf"
         //  3 != 34
+
+        // 101 -> 110
+        //
+
+
     }
 
     static void logicalEquality() {
@@ -54,7 +60,7 @@ public class LessonFiveBoolean {
         System.out.println(stringFalse == "false"); // true
         System.out.println(stringTrue == stringFalse); // false
         System.out.println(stringTrue.equals(stringFalse)); // false
-        // System.out.println(stringFalse == x);
+//        System.out.println(stringFalse == x);
     }
 
     static void logicalComparison() {
@@ -63,8 +69,9 @@ public class LessonFiveBoolean {
         System.out.println(x > 4); // false
         System.out.println(x < 4); // false
         System.out.println(y >= z); // true
-        System.out.println(y <= z); // false
-        System.out.println(z <= -5); // true
+        System.out.println(y <= z); // false  \
+        System.out.println(z <= -5);// true
+        System.out.println("\'a\' > \'A\' = " + ('a' > 'A'));
         // System.out.println(b1 > b2);
     }
 
@@ -84,6 +91,7 @@ public class LessonFiveBoolean {
         System.out.println(b1 || b3); // true
         System.out.println(b4 || b4); // false
 
+        // XOR - отрицающее или
         System.out.println("isCupFull ^ isBottleFull = " + (isCupFull ^ isBottleFull));
         System.out.println(b1 ^ b2); // false
         System.out.println(b1 ^ b3); // true
@@ -92,6 +100,7 @@ public class LessonFiveBoolean {
     }
 
     static void logicalNegation() {
+        // b1 = true     b2 = true      b3 = false      b4 = false
         // x = 4    y = 5   z = -5
         System.out.println(x != 4); // false
         System.out.println(x != 5); // true
@@ -110,6 +119,7 @@ public class LessonFiveBoolean {
         System.out.println(!(b1 || b3)); // false  !(true || false)
         System.out.println(!(b3 || b4)); // true   !(false || false)
 
+        // XOR - отрицающее или
         System.out.println(!b1 ^ b2); // true
         System.out.println(!(b1 ^ b2)); // true
         System.out.println(!(b1 ^ b3)); // false
@@ -142,4 +152,8 @@ public class LessonFiveBoolean {
 
         return result;
     }
+
+
+
+
 }

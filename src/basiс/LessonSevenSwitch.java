@@ -32,7 +32,7 @@ public class LessonSevenSwitch {
 //        switchWithoutBreak("nine");
 //
 //        switchWithEnum(Transport.CAR);
-        switchWithEnum(Transport.BUS);
+//        switchWithEnum(Transport.BUS);
 //        switchWithEnum(Transport.ON_FOOT);
 //        switchWithEnum("CAR");
 //
@@ -40,10 +40,7 @@ public class LessonSevenSwitch {
 //        switchWithEnum(DayOfWeek.THURSDAY);
 //        switchWithEnum(DayOfWeek.SUNDAY);
 //
-//        tryingTernaryOperator();
-
-
-
+        tryingTernaryOperator();
     }
     private enum DayOfWeek {
         MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY;
@@ -105,10 +102,10 @@ public class LessonSevenSwitch {
     public static void switchWithEnum(DayOfWeek day) {
         switch (day) {
             case MONDAY:
-            case TUESDAY:
             case WEDNESDAY:
                 System.out.println("don't forget about Java basic course!");
             case THURSDAY:
+            case TUESDAY:
             case FRIDAY:
                 System.out.println("today is working day");
                 break;
@@ -183,7 +180,9 @@ public class LessonSevenSwitch {
         // незаконная в Java запись:
         // (x % 2 == 0) ? System.out.println("x is even number") : System.out.println("x is odd number");
 
-        int maxOfThree = (x > y) ? ((x > z) ? x : z) : ((y > z) ? y : z);
+        int maxOfThree = (x > y)
+                ? ((x > z) ? x : z)
+                : ((y > z) ? y : z);
         System.out.println(maxOfThree);
     }
 }

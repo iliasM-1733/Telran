@@ -1,10 +1,12 @@
 package basiс;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Arrays;
-import java.util.*;
+
+import java.io.File;
 import java.util.Random;
 import java.util.Scanner;
-
 
 /**
  * Массив в Java (Java Array) — это структура данных, которая хранит набор пронумерованных значений одного типа
@@ -74,11 +76,14 @@ import java.util.Scanner;
  *     имя_массива.length;
  */
 public class LessonTenArray {
-    public static void main(String[] args) {
-        int[] nums = {35, -5, 99, 24, 29, 21, 47, 73, -90, -11};
-        System.out.println(new Date());
-        Math.pow(3, 4);
-
+    public static void main(String[] args) throws FileNotFoundException {
+//        int[] nums = {35, -5, 99, 24, 29, 21, 47, 73, -90, -11};
+//        // System.out.println(new Date());
+////        Math.pow(3, 4);
+////
+////        String str = "hello";
+////        System.out.println(nums[10]);
+        tryRandomClass();
     }
 
     /**
@@ -111,6 +116,7 @@ public class LessonTenArray {
         for(int i = 0; i < nums.length; i++) {
             nums[i] = random.nextInt(-100, 100);
         }
+
         printArray(nums);
     }
 
@@ -165,7 +171,7 @@ public class LessonTenArray {
      * hello.split(" ") - Таким образом мы разделили строку "hello dear friends!" по пробелам.
      */
     private static void initializingStringArray(){
-        String[] strings = new String[3];
+        String[] strings = new String[3];  // {null, null, null}
         printArray(strings);
         strings[0] = "hello ";
         strings[1] = "dear ";
@@ -230,6 +236,8 @@ public class LessonTenArray {
         int[] nums4 = {-3, 2, 3};
 
 
+
+
         System.out.println(nums1);
         System.out.println(nums2);
 
@@ -240,8 +248,9 @@ public class LessonTenArray {
 
         System.out.println(Arrays.toString(nums1));
 
+
         System.out.println(Arrays.compare(nums1, nums2));
-        System.out.println(Arrays.compare(nums1, nums4));
+        System.out.println(Arrays.compare(nums1, nums4)); // {1, 2, 3} {-3, 2, 3};
         System.out.println(Arrays.compare(nums1, nums3)); // {1, 2, 3} {1, 2, 3, 4}
         System.out.println(Arrays.compare(nums4, nums1));
 
@@ -275,7 +284,8 @@ public class LessonTenArray {
      *  arr[i] = arr[i] * i; - меняет значение в массиве
      *  printArray(arr); - каждую итерацию печатает в консоль весь массив, что позволяет видеть изменения.
      */
-    private static void tryForLoopWithArray(int[] arr){
+    private static void tryForLoopWithArray(int[] arr){ // arr
+        printArray(arr);
         for(int i = 0; i < arr.length; i++) {
             arr[i] = arr[i] * i;
             printArray(arr);

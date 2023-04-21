@@ -23,17 +23,16 @@ public class LessonSixIfElse {
     static final Scanner SCANNER = new Scanner(System.in);
 
     public static void main(String[] args) {
-
-        //       tryIfElseStatement(true);
+//        tryIfElseStatement(true);
 //        tryIfElseStatement(false);
 //
 //        tryElseIfStatement(0);
-//        tryElseIfStatement(-10);
+//        tryElseIfStatement(-3);
 //
 //        ifElseWithString("Sunday");
 //        ifElseWithString("Friday");
 //        ifElseWithString("Monday");
-//        ifElseWithString("Wednesday");
+//        ifElseWithString("");
 //
 //        isSick(true, true);
 //        isSick(false, true);
@@ -47,7 +46,10 @@ public class LessonSixIfElse {
 //
 //        simpleChatBot();
 
-        shoping(true, true, true, true, true, true);
+         shoping(true, true, true, true, true, true);
+
+
+
     }
 
     static void tryIfElseStatement(boolean bool) {
@@ -74,6 +76,8 @@ public class LessonSixIfElse {
             // System.out.println("i print it from \"else\" statement. That means, that x is negative number.");
         } else if (isEven && isMultipliedToTen) {
             System.out.println("perhaps x equals to zero");
+        } else {
+            System.out.println("x is negative odd number");
         }
     }
 
@@ -87,16 +91,16 @@ public class LessonSixIfElse {
         }
     }
 
-    static void hikingCondition(boolean isWeekend, boolean isNotRainy, boolean isIamFree) {
-        if(isIamFree && !isNotRainy && isWeekend) {
+    static void hikingCondition(boolean isWeekend, boolean isRainy, boolean isIamFree) {
+        if(isIamFree && !isRainy && isWeekend) {
             System.out.println("let's go to the hiking!");
         } else {
-            if (isWeekend && isNotRainy) {
+            if (isWeekend && !isRainy) {
                 System.out.println("I am busy today, sorry");
             } else if (isWeekend && isIamFree) {
                 System.out.println("It's rainy today");
             } else {
-                System.out.println("Let's gon on a weekend, i'm working today");
+                System.out.println("Let's go on a weekend, i'm working today");
             }
         }
     }
@@ -111,7 +115,7 @@ public class LessonSixIfElse {
         name = SCANNER.nextLine();
         System.out.printf("Hi, %s! Nice to meet you! What is the year of your birth?\n", name);
         yearOfBirth = Integer.parseInt(SCANNER.nextLine());
-        if (2022 - yearOfBirth < 18) {
+        if (2023 - yearOfBirth < 18) {
             System.out.println("I'm sorry, I can't give you access to the entire music library, " +
                     "but nevertheless I still have a huge number of songs that you can listen to!");
         } else {
@@ -124,6 +128,7 @@ public class LessonSixIfElse {
             System.out.println("it's look serious, better to call doc");
         } else if (gotTemperature || haveSoreThroat) {
             if (gotTemperature) {
+                System.out.println("Enter your temp in C:");
                 double temperature = SCANNER.nextDouble();
                 if(temperature > 43) {
                     System.out.println("Call emergency!");
@@ -141,7 +146,8 @@ public class LessonSixIfElse {
     }
 
 
-    static void shoping(boolean havePotato, boolean haveChicken, boolean haveCandy, boolean haveCake, boolean havePotatoCake, boolean haveCookie) {
+    static void shoping(boolean havePotato, boolean haveChicken, boolean haveCandy, boolean haveCake,
+                        boolean havePotatoCake, boolean haveCookie) {
         if(haveChicken) {
             System.out.println("я купил курицу");
         }
