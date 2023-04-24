@@ -102,3 +102,6 @@ https://habr.com/ru/post/485678/
 https://www.codewars.com/
 https://leetcode.com/
 https://www.hackerrank.com/dashboard
+
+практика Java cert 8
+https://www.whizlabs.com/learn/course/ocajp-scja/169
