@@ -1,8 +1,4 @@
-package algorithms.lesson7DynamicArray;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Random;
+package algorithms.lesson7lists;
 
 public class ArrayListExmpl {
     public static void main(String[] args) {
@@ -32,6 +28,5 @@ public class ArrayListExmpl {
     }
 
 
-    // {1, 2, 3, 4, 5, 6, 7, 8, 9, 10} + 11 -> {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0}
-    // {1, 2, 3, 4, 5, 6, 7, 8, 9, 10} + 11 -> {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 0, 0, 0, 0, 0, 0}
+
 }

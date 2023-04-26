@@ -1,25 +1,25 @@
-package algorithms.lesson7DynamicArray;
+package algorithms.lesson7lists;
 
 import java.util.ArrayList;
 
-public class Amortized {
+public class AmortizedArrayList {
 
     public static void main(String[] args) {
         int size = 10_000;
         System.out.printf("Создание массива длинной %d\n", size);
         ArrayList<Integer> list = fillArray(size);
 
-        System.out.printf("Время на удаление всех елементов, с конца массива %d\n",
+        System.out.printf("Время на удаление всех елементов ArrayList, с конца массива %d\n",
                 removeLast(list));
 
         list = fillArray(size);
 
-        System.out.printf("Время на удаление всех елементов, с начала массива %d\n",
+        System.out.printf("Время на удаление всех елементов ArrayList, с начала массива %d\n",
                 removeFirst(list));
 
         list = fillArray(size);
 
-        System.out.printf("Время на удаление всех елементов, с середины массива %d\n",
+        System.out.printf("Время на удаление всех елементов ArrayListArrayList, с середины массива %d\n",
                 removeMid(list));
     }
 

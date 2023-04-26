@@ -1,4 +1,4 @@
-package algorithms.lesson7DynamicArray;
+package algorithms.lesson7lists;
 
 public class DynamicArray {
     private int[] array; // variable array[] is an array

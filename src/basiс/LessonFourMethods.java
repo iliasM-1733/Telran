@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Locale;
+import java.util.Scanner;
 
 public class LessonFourMethods {
 
@@ -32,6 +33,11 @@ public class LessonFourMethods {
      * метод характеризуется аналогичным именем, типом, числом параметров и т.д.
      */
     public static void main(String[] args) throws IOException { // String[] args
+        double x = 23.45;
+        double b = substraction(x,  5.12);
+
+
+
         /*
         String string = "one two three";
         String str = methodTwo(string);
@@ -78,14 +84,10 @@ public class LessonFourMethods {
 
 //        LessonFourMethods lsf = new LessonFourMethods();
 //        lsf.methodOne();
-
-        double myDouble = substraction(10324, 354);
-        // ...
-
-        System.out.println(myDouble);
     }
 
     static double substraction(double x, double y) {
+        // сложная логика подсчетов
 
         double result = x - y;
 
@@ -93,14 +95,16 @@ public class LessonFourMethods {
     }
 
 
-
-
     static void methodOne(int num) { // int num = 33;
+
         System.out.println("я испек " + num + " круассанов!");
+
     }
 
     static void methodOne() {
+
         System.out.println("я испек круассан");
+
     }
 
     static void methodOne(String str) {
