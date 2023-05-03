@@ -30,9 +30,8 @@ public class LessonFiveBoolean {
          */
         //logicalComparison();
         //logicalEquality();
-        // logicalNegation();
-        //logicalBinaryOperation();
-        //logicalNegation();
+        logicalNegation();
+        // logicalBinaryOperation();
         //logicalPriority();
 
 
@@ -49,8 +48,8 @@ public class LessonFiveBoolean {
     static void logicalEquality() {
         // b1 = true     b2 = true      b3 = false      b4 = false
         // x = 4    y = 5   z = -5
-        String stringTrue = "true";
-        String stringFalse = "false";
+        String stringTrue = "true"; // "yes"
+        String stringFalse = "false"; // "no"
 
         System.out.println(b1 == b2); // true
         System.out.println(b1 == b3); // false
@@ -61,6 +60,9 @@ public class LessonFiveBoolean {
         System.out.println(stringTrue == stringFalse); // false
         System.out.println(stringTrue.equals(stringFalse)); // false
 //        System.out.println(stringFalse == x);
+
+        double d =  4.0;
+        System.out.println("d == x  = " + (d ==  x));
     }
 
     static void logicalComparison() {
@@ -69,9 +71,10 @@ public class LessonFiveBoolean {
         System.out.println(x > 4); // false
         System.out.println(x < 4); // false
         System.out.println(y >= z); // true
-        System.out.println(y <= z); // false  \
+        System.out.println(y <= z); // false
         System.out.println(z <= -5);// true
         System.out.println("\'a\' > \'A\' = " + ('a' > 'A'));
+
         // System.out.println(b1 > b2);
     }
 
@@ -80,13 +83,13 @@ public class LessonFiveBoolean {
         boolean isCupFull = true;
         boolean isBottleFull = false;
 
-        System.out.println(isCupFull && isBottleFull); // false
+        System.out.println("достаточно ли у меня воды? " + (isCupFull && isBottleFull)); // false
         System.out.println(b1 && b2); // true
         System.out.println(b1 && b3); // false
         System.out.println(b4 && b4); // false
 
 
-        System.out.println("isCupFull || isBottleFull = " + (isCupFull || isBottleFull));
+        System.out.println("попью ли я воды? " + (isCupFull || isBottleFull));
         System.out.println(b1 || b2); // true
         System.out.println(b1 || b3); // true
         System.out.println(b4 || b4); // false
@@ -136,6 +139,7 @@ public class LessonFiveBoolean {
          * 5. логическое OR
          * 6. логическое ИЛИ
          */
+
 
         System.out.println((true && (false || false) ^ !(4 > x)));
         System.out.println(true || true ^ (!false ^ true) || false && !(false && true));
