@@ -11,9 +11,7 @@ public class SimpleConsumer {
         while (true) {
             Task task = manager.getTaskFromQueue();
             if (task != null) {
-                System.out.println(task.getTaskName());
-            } else {
-                break;
+                System.out.println("Queue: " + task.getTaskName());
             }
             Thread.sleep(100);
         }
@@ -23,9 +21,7 @@ public class SimpleConsumer {
         while (true) {
             Task task = manager.getTaskFromStack();
             if (task != null) {
-                System.out.println(task.getTaskName());
-            } else {
-                break;
+                System.out.println("Stack: " + task.getTaskName());
             }
         }
     }
