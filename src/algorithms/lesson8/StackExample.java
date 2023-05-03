@@ -6,7 +6,6 @@ public class StackExample {
     public static void main(String[] args) {
         Stack<Integer> stack = new Stack<>();
 
-
         stack.push(23);
         stack.push(3);
         stack.push(6);
@@ -25,10 +24,14 @@ public class StackExample {
         System.out.println(stack);
         System.out.println("stack.pop(): " + stack.pop());
         System.out.println(stack);
+        System.out.println("stack.pop(): " + stack.pop());
+        System.out.println(stack);
         System.out.println(stack.get(0)); // возвращает элемент по индексу
 
-        stack.remove((Integer) 6);
+        stack.remove((Integer) 6); // удаляет элемент из стека по его значению
         System.out.println("stack.remove((Integer) 6) " + stack);
+
+
         System.out.println(getMin(stack));
         System.out.println(stack);
         stack.clear(); // очистит

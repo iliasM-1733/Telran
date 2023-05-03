@@ -10,7 +10,7 @@ public class SimpleTaskCreator {
     public void setTasksToQueue(int tasks) throws InterruptedException {
         for (int i = 0; i < tasks; i++) {
             Task task = new Task("Task N " + i);
-            Thread.sleep(1000);
+            Thread.sleep(10);
             manager.addTaskToQueue(task);
         }
     }

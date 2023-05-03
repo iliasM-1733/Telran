@@ -18,10 +18,11 @@ public class QueueDeque {
         //removeElem(queue);
         pollElement(queue);
         System.out.println("queue.poll() = " + queue.poll());
+        // System.out.println("queue.remove() = " + queue.remove());
         fillQueue(queue);
 
         // element и peek, показывает кто в очереди первый, но element выбросит исключение
-        // queue.clear();
+        //queue.clear();
         System.out.println(queue.element());
         System.out.println("queue.peek() = " + queue.peek());
 
@@ -82,6 +83,10 @@ public class QueueDeque {
         System.out.println(deque);
 
         System.out.println(deque.removeLast());
+        System.out.println(deque);
+        System.out.println(deque.remove());
+        System.out.println(deque);
+        System.out.println(deque.removeFirst());
         System.out.println(deque);
 
         Deque<Integer> listAsDeque = new LinkedList<>();

@@ -7,17 +7,19 @@ public class SimpleConsumer {
         this.manager = manager;
     }
 
-    private void listenQueue() throws InterruptedException {
+    public void listenQueue() throws InterruptedException {
         while (true) {
             Task task = manager.getTaskFromQueue();
             if (task != null) {
                 System.out.println(task.getTaskName());
+            } else {
+                break;
             }
             Thread.sleep(100);
         }
     }
 
-    private void listenStack() throws InterruptedException {
+    public void listenStack() throws InterruptedException {
         while (true) {
             Task task = manager.getTaskFromStack();
             if (task != null) {
