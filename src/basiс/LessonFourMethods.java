@@ -8,6 +8,21 @@ import java.util.Scanner;
 
 public class LessonFourMethods {
 
+
+    // <type> calculateSquare(<some args>) {
+    // - triangle square
+    // - circle square
+    // - rectangle square
+
+
+
+
+
+
+
+
+
+
     /**
      * Метод в Java – это комплекс выражений, совокупность которых позволяет выполнить определенную операцию.
      * Так, например, при вызове метода System.out.println(), система выполняет ряд команд для выведения сообщения
@@ -32,58 +47,17 @@ public class LessonFourMethods {
      * различными параметрами. Данный процесс отличен от переопределения методов. При переопределении методов,
      * метод характеризуется аналогичным именем, типом, числом параметров и т.д.
      */
-    public static void main(String[] args) throws IOException { // String[] args
-        double x = 23.45;
-        double b = substraction(x,  5.12);
+    public static void main(String[] args) {
+        int x = methodThree();
+        int a = methodThree();
+        int b = methodThree();
 
+        int y = methodThree(66);
+        System.out.println("x = " + x);
+        System.out.println("a = " + a);
+        System.out.println("b = " + b);
+        System.out.println("y = " + y);
 
-
-        /*
-        String string = "one two three";
-        String str = methodTwo(string);
-
-        methodOne();
-        methodOne("string");
-        methodOne(123);
-
-
-        System.out.println(methodThree(13));
-
-        LessonFourMethods lessonFourMethods = new LessonFourMethods();
-
-
-        //не статичные методы не могут быть использованы без экземпляра класса
-        System.out.println("===non static methods===");
-        lessonFourMethods.nonStaticMethodOne();
-        lessonFourMethods.nonStaticMethodOne("sfdsfdssd");
-        System.out.println(lessonFourMethods.nonStaticMethodThree(4));
-
-        // также не статичный метод
-        String temp = "temporary";
-        temp.toUpperCase();
-
-        // не статичная переменная - переменная экземпляра класса, допустим длинна строки
-        int lenght = temp.length();
-
-        // к статичным методам мы можем отнести методы класса Math
-        Math.pow(3, 4);
-
-        // также относится к статическим переменным
-        double pi = Math.PI;
-
-        //=====================
-
-        methodFive(5, "string");
-        methodFive("another string", 34);
-*/
-//        String str = methodTwo("ssf");
-//        System.out.println(str);
-//
-//        int num = methodThree(1251);
-//        System.out.println(num);
-
-//        LessonFourMethods lsf = new LessonFourMethods();
-//        lsf.methodOne();
     }
 
     static double substraction(double x, double y) {
@@ -111,7 +85,7 @@ public class LessonFourMethods {
         System.out.println("я не знаю, что это значит!? " + str);
     }
 
-    static String methodTwo(String str) { // String str = "one two three";
+    static String methodTwo(String str) { // String str = "String";
         String result = str.toUpperCase() + str;
         System.out.println("i print it from methodTwo : " + str);
         return result; //обязаны вернуть тип String

@@ -7,7 +7,7 @@ public class Recursion {
     static long counter = 0;
 
     public static void main(String[] args) {
-        String str = "";
+
         recursion(12);
 
     }
@@ -32,8 +32,6 @@ public class Recursion {
         System.out.println(counter++);
         Random random = new Random();
         String str = new String("hello " + random.nextInt());
-
-
 
         return recursion(x++);
     }

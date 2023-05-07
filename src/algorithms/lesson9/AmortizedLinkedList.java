@@ -1,10 +1,11 @@
 package algorithms.lesson9;
 
 import java.util.LinkedList;
+import java.util.Queue;
 
 public class AmortizedLinkedList {
     public static void main(String[] args) {
-        int size = 10_000;
+        int size = 100_000;
         System.out.printf("Создание массива длинной %d\n", size);
         LinkedList<Integer> list = fillArray(size);
 
@@ -50,12 +51,35 @@ public class AmortizedLinkedList {
 
 
 
-    static LinkedList<Integer> fillArray(int size) { // 10_000
+    static LinkedList<Integer> fillArray(int size) { // 100_000
+        long start = System.nanoTime();
         LinkedList<Integer> list = new LinkedList<>();
         for (int i = 0; i < size; i++) {
             list.add(i);
         }
+
+        long totalTime = System.nanoTime() - start;
+        System.out.printf("Заполнение LinkedList %d элементами заняло %d нс\n", size, totalTime);
         return list;
+
     }
 
 }
+
+//              10_000
+
+//        Создание массива длинной 10000                                          687_792         912_209
+//
+//                                                                               ArrayList      LinkedList
+//        Время на удаление всех елементов ArrayList, с конца массива             971_708       1_083_041
+//        Время на удаление всех елементов ArrayList, с начала массива            5_090_459     400_083
+//        Время на удаление всех елементов ArrayListArrayList, с середины массива 2_680_333     45_721_917
+
+//          100_000
+
+
+//                                                                                750_916         1_493_833
+//                                                                                ArrayList       LinkedList
+//        Время на удаление всех елементов ArrayList, с конца массива             3_629_375       4_286_500
+//        Время на удаление всех елементов ArrayList, с начала массива            495_684_958     3_470_541
+//        Время на удаление всех елементов ArrayListArrayList, с середины массива 238_555_916     4_323_412_791

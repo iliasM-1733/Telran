@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class AmortizedArrayList {
 
     public static void main(String[] args) {
-        int size = 10_000;
+        int size = 100_000;
         System.out.printf("Создание массива длинной %d\n", size);
         ArrayList<Integer> list = fillArray(size);
 
@@ -52,11 +52,15 @@ public class AmortizedArrayList {
 
 
     static ArrayList<Integer> fillArray(int size) { // 10_000
-        ArrayList<Integer> list = new ArrayList<>(1_000_000);
+        long start = System.nanoTime();
+        ArrayList<Integer> list = new ArrayList<>();
         for (int i = 0; i < size; i++) {
             list.add(i);
         }
-        list.trimToSize(); // capacity 1_000_000 -> 10_000
+        // list.trimToSize(); // capacity 1_000_000 -> 10_000
+
+        long totalTime = System.nanoTime() - start;
+        System.out.printf("Заполнение ArrayList %d элементами заняло %d нс\n", size, totalTime);
         return list;
     }
 }

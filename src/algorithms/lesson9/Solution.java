@@ -1,6 +1,4 @@
 package algorithms.lesson9;
-
-
 // A -> B -> C -> null  reverse
 // null <- A <- B <- C
 // A -> B -> C -> D -> E -> F -> null  reverse(1, 3);

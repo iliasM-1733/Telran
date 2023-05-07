@@ -3,7 +3,7 @@ package basiс;
 public class LessonFourMethodsPartTwo {
     public static void main(String[] args) {
         //doEverythingByMyself();
-        //doEverythingByHelpers();
+        doEverythingByHelpers();
     }
 
     /**
@@ -42,7 +42,7 @@ public class LessonFourMethodsPartTwo {
         boolean parrotOneIsFemale = true; // является ли самкой попугай 1
 
         // логика для подсчета нормы корма в гр:
-        double foodForParrotOne = parrotOneAge * parrotOneAge * 10;
+        double foodForParrotOne = parrotOneWeight * parrotOneAge * 10;
 
         // кормим первого попугая:
         System.out.printf("Попугай по имени %s получил свою дневную порцию корма размером %.2f грамм\n", parrotOneName, foodForParrotOne);
@@ -158,13 +158,16 @@ public class LessonFourMethodsPartTwo {
      *  этот результат
      */
 
+
+    // мне надо передать (double weight, int age, String name, boolean isFemale)
+    // мне вернуться вот эти данные double
     private static double feedParrot(double weight, int age, String name, boolean isFemale) {
         double foodForParrot = weight * 10 - age * 0.1;
 
-        // кормим третьего попугая:
+        // кормим попугая:
         System.out.printf("Попугай по имени %s получил свою дневную порцию корма размером %.2f грамм\n", name, foodForParrot);
 
-        // проверяем является ли третий попугай самкой:
+        // проверяем является ли  попугай самкой:
         if (isFemale) {
             System.out.printf("Дадим %s дополнительные минералы, так как это самка\n", name);
             foodForParrot = foodForParrot + 1;
@@ -175,7 +178,7 @@ public class LessonFourMethodsPartTwo {
 
     /**
      *  подобные методы мы используем в повседневной жизни, когда нам надо получить какую-то выписку
-     *  (SHUFA в германии), либо мы можем указать в нашем банковском приложении временной интервали и мы получим отчет
+     *  (SHUFA в Германии), либо мы можем указать в нашем банковском приложении временной интервали и мы получим отчет
      *  о доходах расходах, можно предположить, что данный метод выглядел бы примерно так:
      *
      *  -->double<-- expensesInDatePeriod(Date start, Date end) {
@@ -197,7 +200,7 @@ public class LessonFourMethodsPartTwo {
      *
      * private static -->void<-- calculateTaxes(double totalFoodWeight, double priceForKg )
      */
-    private static void calculateTaxes(double totalFoodWeight, double priceForKg ) {
+    private static void calculateTaxes(double totalFoodWeight, double priceForKg) {
         double totalPrice = totalFoodWeight / 1000 * priceForKg; // перевели в килограммы и умножили на цену
         // тк это бизнес расходы мы можем вернуть ндс, но для этого надо заполнить и отправить форму:
 
@@ -248,13 +251,15 @@ public class LessonFourMethodsPartTwo {
         double weightOfFood = 0;
 
         //покормили попугаев
-        weightOfFood = feedParrot(parrotOneWeight, parrotOneAge, parrotOneName, parrotOneIsFemale);
-        weightOfFood += feedParrot(parrotTwoWeight, parrotTwoAge, parrotTwoName, parrotTwoIsFemale);
-        weightOfFood += feedParrot(parrotThreeWeight, parrotThreeAge, parrotThreeName, parrotThreeIsFemale);
+        weightOfFood = feedParrot(parrotOneWeight, parrotOneAge, parrotOneName, parrotOneIsFemale); // weightOfFood = 10
+        weightOfFood += feedParrot(parrotTwoWeight, parrotTwoAge, parrotTwoName, parrotTwoIsFemale); // weightOfFood = weightOfFood + 12  = 22
+        weightOfFood += feedParrot(parrotThreeWeight, parrotThreeAge, parrotThreeName, parrotThreeIsFemale); // weightOfFood = weightOfFood + 7 = 29
 
         //отправили форму на возврат ндс
         double priceOfFood = 3.0;
         calculateTaxes(weightOfFood, priceOfFood);
+
+        // был рабочий день
 
         //запустили процедуры перед сном
         playNightMusic();
