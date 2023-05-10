@@ -14,7 +14,7 @@
 
 2. в IntellijIdea создайте новый проект, выбрав пункт "Project from Version Control":
 
-<img width="1694" alt="image" src="https://github.com/IliasMiftakhov/Telran/assets/114676896/42a76087-277e-40d0-83fc-f98103c9f181">
+![image](https://github.com/IliasMiftakhov/Telran/assets/114676896/e9a17a28-9c88-4552-9f94-541ee1477111)
 
 3. в поле URL вставьте ссылку из шага 1 (обязательно выберети корректную директорию расположения) и нажмите кнопку Clone:
 
