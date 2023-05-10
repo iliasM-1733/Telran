@@ -1,11 +1,11 @@
 # Telran
 
 В пакете basic 
-- homeworks - домашние работы
-    - <a href="[url](https://github.com/IliasMiftakhov/Telran/tree/master/src/basic/homeworks/decisions)">decisions</a> - отдельные решения для дз с пояснениями
+- [homeworks](https://github.com/IliasMiftakhov/Telran/tree/master/src/basic/homeworks) - домашние работы
+    - [decisions](https://github.com/IliasMiftakhov/Telran/tree/master/src/basic/homeworks/decisions) - отдельные решения для дз с пояснениями
    текстовое описание задач
-- presentations -  презентации
-+ практический код для урока. 
+- [presentations](https://github.com/IliasMiftakhov/Telran/tree/master/src/basic/presentations) -  презентации
++ [практический код для урока](https://github.com/IliasMiftakhov/Telran/tree/master/src/basic) 
 
 для того, чтобы скопировать себе весь проект выполните следующие шаги:
 1. скопируйте ссылку на репозиторий из github:
