@@ -2,7 +2,7 @@
 
 В пакете basic 
 - homeworks - домашние работы
-    - decisions - отдельные решения для дз с пояснениями
+    - <a href="[url](https://github.com/IliasMiftakhov/Telran/tree/master/src/basic/homeworks/decisions)">decisions</a> - отдельные решения для дз с пояснениями
    текстовое описание задач
 - presentations -  презентации
 + практический код для урока. 
