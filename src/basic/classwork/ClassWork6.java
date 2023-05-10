@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class ClassWork6 {
     static final Scanner SCANNER = new Scanner(System.in);
+
     public static void main(String[] args) {
         calculateArea();
     }
@@ -38,5 +39,4 @@ public class ClassWork6 {
 
         return a * b;
     }
-
 }
