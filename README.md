@@ -1,11 +1,17 @@
 # Telran
 
+<details>
+<summary>Курс Basic Java</summary>
+
 В пакете basic 
 - [homeworks](https://github.com/IliasMiftakhov/Telran/tree/master/src/basic/homeworks) - домашние работы
     - [decisions](https://github.com/IliasMiftakhov/Telran/tree/master/src/basic/homeworks/decisions) - отдельные решения для дз с пояснениями
    текстовое описание задач
 - [presentations](https://github.com/IliasMiftakhov/Telran/tree/master/src/basic/presentations) -  презентации
 + [практический код для урока](https://github.com/IliasMiftakhov/Telran/tree/master/src/basic) 
+
+<details>
+<summary>Как скопировать весь проект себе на компьютер</summary>
 
 для того, чтобы скопировать себе весь проект выполните следующие шаги:
 1. скопируйте ссылку на репозиторий из github:
@@ -24,5 +30,16 @@
 
 <img width="760" alt="image" src="https://github.com/IliasMiftakhov/Telran/assets/114676896/aac0b0aa-4f6e-4a29-9558-d42e176f40e7">
 
- 
+ </details>
+</details>
+
+<details>
+<summary>Курс "Алгоритмы и структуры данных"</summary>
+
+- [презентации](https://github.com/IliasMiftakhov/Telran/tree/master/src/algorithms/presentations)
+- [домашки в txt (дополняются)](https://github.com/IliasMiftakhov/Telran/tree/master/src/algorithms/homeworks)
+- [дополнительные алгоритмические задачи](https://github.com/IliasMiftakhov/Telran/tree/master/src/algorithms/additionalTask)
+- [полезные ссылки](https://github.com/IliasMiftakhov/Telran/blob/master/src/algorithms/sources.txt)
+
+</details>
 
