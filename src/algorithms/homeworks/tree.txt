@@ -1,0 +1,29 @@
+Напишите реализацию класса BalancedTreeImpl, который реализует интерфейс BalancedTree
+дерево должно быть бинарным и сбалансированным, то есть, при добавлении и удалении элементов в дерево, баланс должен
+сохраняться
+
+interface BalancedTree
+-add(int data) void - добавить элемент в дерево
+-search(int data) boolean - true/false если указанный элемент есть или его нет
+-remove(int data) void - удаляет элемент из дерева
+-getDepth() int - возвращает самый длинный путь от корня до самого дальнего листа (количество нод)
+-getSize() int - возвращает количество нод
+-traversalWidth() void - обход дерева в ширину, печатает в консоль
+-traversalDepth() void - обход дерева в глубину, печатает в консоль
+
+class BalancedTreeImpl
+-TreeNode node - корневой элемент
+-int size - количество нод
+
+constructor BalancedTreeImpl()
+
+
+nested class TreeNode
+
+int data
+TreeNode leftNode
+TreeNode rightNode
+
+
+допустимо сдать данную реализацию:
+https://javarush.com/groups/posts/3111-strukturih-dannihkh-dvoichnoe-derevo-v-java

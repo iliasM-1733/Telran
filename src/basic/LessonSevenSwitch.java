@@ -23,8 +23,6 @@ public class LessonSevenSwitch {
 //        switchWithBreak("four");
 //        switchWithBreak("nine");
 //
-//
-//
 //        switchWithoutBreak("one");
 //        switchWithoutBreak("four");
 //        switchWithoutBreak("nine");
@@ -36,10 +34,11 @@ public class LessonSevenSwitch {
 //
 //        switchWithEnum(DayOfWeek.MONDAY);
 //        switchWithEnum(DayOfWeek.THURSDAY);
-//        switchWithEnum(DayOfWeek.SUNDAY);
+//        switchWithEnum(DayOfWeek.SATURDAY);
 //
         tryingTernaryOperator();
     }
+
     private enum DayOfWeek {
         MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY;
     }
@@ -156,7 +155,7 @@ public class LessonSevenSwitch {
      */
 
     public static void tryingTernaryOperator() {
-        String isOdd;
+        String isOdd; // нечетныйЛи
         int x = 34;
         int y = 156;
         int z = 76;
@@ -181,7 +180,7 @@ public class LessonSevenSwitch {
         int maxOfThree = (x > y)
                 ? ((x > z) ? x : z)
                 : ((y > z) ? y : z);
-        System.out.println(maxOfThree);
+        System.out.println("max of three = " + maxOfThree);
     }
 }
 

@@ -5,15 +5,20 @@ import java.util.Scanner;
 public class ClassWork6 {
     static final Scanner SCANNER = new Scanner(System.in);
 
-    public static void main(String[] args) {
-        calculateArea();
+    private enum Figure {
+        TRIANGLE, CIRCLE, RECTANGLE;
     }
 
-    static void calculateArea() {
-        String figure = SCANNER.nextLine();
+    public static void main(String[] args) {
+        calculateArea(Figure.TRIANGLE);
+    }
 
-        // if-else
-        // площадь круга/прямоугольника/треугольника равна ...
+    static void calculateArea(Figure figureType) {
+        switch (figureType) {
+            case CIRCLE -> System.out.println("Square of  CIRCLE equals " + calculateCircleArea());
+            case TRIANGLE -> System.out.println("Square of  TRIANGLE equals " + calculateTriangleArea());
+            case RECTANGLE -> System.out.println("Square of  RECTANGLE equals " + calculateRectangleArea());
+        }
     }
 
     static double calculateCircleArea() {
