@@ -22,7 +22,8 @@ import java.util.Scanner;
 
 public class LessonEightForLoop {
     public static void main(String[] args) {
-        someMethod();
+        nestedForLoopWithReturn();
+
     }
 
     private static void simpleCounter() {
@@ -39,7 +40,7 @@ public class LessonEightForLoop {
 
     private static void endlessForLoop(){
         for(int i = 0; i >= 0; i++) {
-            System.out.println(i);
+            System.out.print(i + " ");
         }
     }
 
@@ -68,11 +69,10 @@ public class LessonEightForLoop {
     }
 
     private static void nestedForLoop() {
-        for(int i = 1; i < 5; i++) {
-            for (int j = 1; j < 3; j++) {
-                System.out.print(i + ";" + j + " ");
+        for(int i = 1; i < 11; i++) {
+            for (int j = 1; j < 11; j++) {
+                System.out.print(i + "*" + j + " = " + (i * j) + "  ");
             }
-
             System.out.println();
         }
     }
@@ -108,7 +108,6 @@ public class LessonEightForLoop {
             }
             System.out.println();
         }
-
         System.out.println("I've finished nestedForLoopWithBreak() method");
     }
 
