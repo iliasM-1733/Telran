@@ -22,6 +22,7 @@ public class ClassWork9while {
     }
 
     static double calculateCircleArea() {
+        System.out.println("Введите пожалуйста радиус:");
         double r = SCANNER.nextDouble();
 
         // цикл тут
@@ -30,8 +31,11 @@ public class ClassWork9while {
     }
 
     static double calculateTriangleArea() {
+        System.out.println("Введите размер стороны А треугольника:");
         double a = SCANNER.nextDouble();
+        System.out.println("Введите размер стороны B треугольника:");
         double b = SCANNER.nextDouble();
+        System.out.println("Введите размер стороны C треугольника:");
         double c = SCANNER.nextDouble();
 
         // цикл тут
@@ -42,7 +46,9 @@ public class ClassWork9while {
     }
 
     static double calculateRectangleArea() {
+        System.out.println("Введите размер стороны А прямоугольника:");
         double a = SCANNER.nextDouble();
+        System.out.println("Введите размер стороны B прямоугольника:");
         double b = SCANNER.nextDouble();
 
         // цикл тут
