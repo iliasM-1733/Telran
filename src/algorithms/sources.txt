@@ -83,6 +83,7 @@ https://www.geeksforgeeks.org/hashing-data-structure/?ref=gcse (огромный
 https://www.geeksforgeeks.org/hashing-in-java/?ref=gcse
 https://habr.com/ru/post/585898/
 https://www.techiedelight.com/ru/generate-sha-256-hashcode-java/
+https://www.youtube.com/watch?v=xV8USnjKGCU&t=1s
 
 Map Interface in Java
 https://www.geeksforgeeks.org/map-interface-java-examples/?ref=gcse

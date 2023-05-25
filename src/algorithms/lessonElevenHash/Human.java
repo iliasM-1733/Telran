@@ -61,7 +61,7 @@ public class Human {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
+        if (o == null || getClass() != o.getClass()) return false;
         Human human = (Human) o;
         return name == human.name;
     }
@@ -70,6 +70,7 @@ public class Human {
     public int hashCode() {
         // int result = name.length() + age;
         int result = name.hashCode() * 31;
+
         return result;
     }
 }

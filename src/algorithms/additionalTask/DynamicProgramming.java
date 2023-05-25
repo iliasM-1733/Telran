@@ -5,8 +5,10 @@ package algorithms.additionalTask;
  * помимо этого дана дверь с координатами (n, m). Найдите количество путей, которыми может двигаться робот.
  *
  *      __ __ __
- *  2  |  |  |🚪|
- *     -- -- --
+ *  3  |  | x |🚪|
+ *     -- -- -----
+ *  2  |  | y | x |
+ *     ----------
  *  1  |🤖|  |  |
  *     __ __ __
  *     1  2  3
@@ -15,17 +17,31 @@ package algorithms.additionalTask;
 public class DynamicProgramming {
 
     public static void main(String[] args) {
-        System.out.println(paths(2, 3));
-        System.out.println(dynamicPaths(2, 3));
+
+        long startDyn = System.nanoTime();
+
+        long finishDyn = System.nanoTime() - startDyn;
+
+        long start = System.nanoTime();
+        long finish = System.nanoTime() - start;
+
+        System.out.println("non dynamic time " + finish + " ns");
+        System.out.println(paths(5, 5));
+        System.out.println("dynamic time " + finishDyn + " ns");
+
+        
+
+        // O(2 ^ (n + m))
     }
 
+    // O(2 ^ (n + m)) -> (100, 100) -> 2^200
     static int paths(int n, int m) {
         // база рекурсии, тк робот не может двигаться влево и вниз
         if(n < 1 || m < 1) {
             return 0;
         }
 
-        //робот находится в изначальной точке
+        //дверь находится в изначальной точке
         if (n == 1 && m == 1) {
             return 1;
         }
@@ -38,6 +54,8 @@ public class DynamicProgramming {
         return helper(n, m, new int[n+1][m+1]); // int[n+1][m+1] - потому что начальная точка не 0,0, а 1,1
     }
 
+
+    // O (n ^ 2)
     static int helper(int n, int m, int[][] arr) {
         // база рекурсии, тк робот не может двигаться влево и вниз
         if(n < 1 || m < 1) {

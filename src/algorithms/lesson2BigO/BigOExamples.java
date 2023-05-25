@@ -27,14 +27,15 @@ public class BigOExamples {
         
     }
 
-    // O(1)
+
+    // 0(1)
     static int getLastElem(int[] nums) {
         return nums[nums.length - 1];
     }
 
 
-    // O(n)
-    static int getSumOfElem(int[] nums) {
+    // O(n)  O(n + 1) -> O(n)
+    static int getSumOfElem(int[] nums) { // 352 bit
         int sum = 0;
         for (int i = 0; i < nums.length; i++) {
             sum += i;
@@ -43,7 +44,7 @@ public class BigOExamples {
     }
 
 
-    // O(log n)
+
     static boolean isContainsBinaryImplementationRecursion(int[] sortedArray, int x) {
         int mid = sortedArray.length / 2;
 
@@ -70,7 +71,7 @@ public class BigOExamples {
         return false;
     }
 
-    // O (n log n)
+
     static void mergeSort(int arr[], int l, int m, int r) {
 
         // Find sizes of two subarrays to be merged
@@ -121,10 +122,11 @@ public class BigOExamples {
         }
     }
 
-    // O (n^2)
-    static void printDoubleArray(int[][] nums) {
-        for(int i = 0; i < nums.length; i++) {
-            for(int j = 0; j < nums.length; j++) {
+
+    // O(n * m) -> O(n^2)  [[2, 3],  [4, 5],   [6, 7]]
+    static void printDoubleArray(int[][] nums) {   // int[n][m] -> int[50][100]
+        for(int i = 0; i < nums.length; i++) { // O(n)
+            for(int j = 0; j < nums[i].length; j++) { // O(m)
                 System.out.print(nums[i][j] + " ");
             }
             System.out.println();

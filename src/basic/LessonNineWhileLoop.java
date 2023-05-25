@@ -1,5 +1,9 @@
 package basic;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -18,8 +22,8 @@ import java.util.Scanner;
 public class LessonNineWhileLoop {
     static final Scanner SCANNER = new Scanner(System.in);
 
-    public static void main(String[] args) {
-        tryReturnWithWhile();
+    public static void main(String[] args) throws IOException {
+        whileLoopWithScanner();
     }
 
 
@@ -31,6 +35,7 @@ public class LessonNineWhileLoop {
      */
     private static void simpleWhileLoop() {
         int x = 0;
+
         while (x < 3) {
             System.out.print(x + " ");
             x++;
@@ -98,6 +103,7 @@ public class LessonNineWhileLoop {
             System.out.println("i print it from do-while loop. x = " + x);
             x++; // x = 10
 
+
         } while (x < 10);  // true or false
     }
 
@@ -134,16 +140,22 @@ public class LessonNineWhileLoop {
      * Mac: 'command' + 'D'
      * Windows: 'Ctrl' + 'D'
      */
-    private static void whileLoopWithScanner() {
-        Scanner scanner = new Scanner(System.in);
-
+    private static int whileLoopWithScanner() throws IOException {
         int sum = 0;
-        while (scanner.hasNext()) {
-            int elem = scanner.nextInt();
-            sum += elem;
+        File file = new File("/Users/imiftakhov/Desktop/telran/Telran/src/basic/temp.txt");
+        FileWriter writer = new FileWriter(file);
+
+        while (SCANNER.hasNext()) { // hasNext() - вернет false, когда ввод окончен
+            try {
+                int elem = SCANNER.nextInt();
+                sum += elem;
+            } catch (Exception exception) {
+                writer.write("some error");
+            }
         }
 
         System.out.println(sum);
+        return sum;
     }
 
     /**
@@ -160,13 +172,16 @@ public class LessonNineWhileLoop {
      */
     private static void tryBreakWithWhile() {
         int sum = 0;
-        while (true) {
+
+        while (true) { //
             int x = SCANNER.nextInt();
             if (x == 0) {
                 break;
             }
             sum += x;
         }
+
+
         System.out.println(sum);
     }
 
@@ -189,15 +204,20 @@ public class LessonNineWhileLoop {
      */
     private static void tryContinueWithWhile() {
         int sum = 0;
+
         while (true) {
             int x = SCANNER.nextInt();
+
             if (x % 2 == 0 && x != 0) {
                 continue;
             } else if (x == 0) {
                 break;
             }
+
             sum += x;
         }
+
+
         System.out.println(sum);
     }
 
@@ -216,6 +236,7 @@ public class LessonNineWhileLoop {
      */
     private static void tryReturnWithWhile() {
         int sum = 0;
+
         while (true) {
             int x = SCANNER.nextInt();
             if (x == 0) {

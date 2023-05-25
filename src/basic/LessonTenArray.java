@@ -82,9 +82,8 @@ public class LessonTenArray {
 ////        System.out.println(nums[10]);
         //tryRandomClass();
 
-        long l = 5l;
 
-
+        tryArrays();
 
     }
 
@@ -147,6 +146,7 @@ public class LessonTenArray {
 
         int x = nums[9];
         System.out.println(nums[9] * nums[9]);
+        printArray(nums);
     }
 
     /**
@@ -159,6 +159,9 @@ public class LessonTenArray {
         int[] nums = {1, 2, 3, 4};
         printArray(nums);
         nums[2] = 30;
+        nums[1] = 101;
+        printArray(nums);
+        nums[1] = 2;
         printArray(nums);
     }
 
@@ -204,8 +207,11 @@ public class LessonTenArray {
         char[] chars1 = {104, 101, 108, 108, 111};
         printArray(chars1);
 
-        char[] chars2 = "hello my friends!".toCharArray();
+        char[] chars2 = "1".toCharArray();
         printArray(chars2);
+
+        if (chars2.length > 0)
+            System.out.println(chars2[0]);
         System.out.println(chars2[chars2.length - 1]);
     }
 
@@ -237,9 +243,6 @@ public class LessonTenArray {
         int[] nums3 = {1, 2, 3, 4};
         int[] nums4 = {-3, 2, 3};
 
-
-
-
         System.out.println(nums1);
         System.out.println(nums2);
 
@@ -249,6 +252,7 @@ public class LessonTenArray {
         System.out.println(Arrays.equals(nums1, nums2)); // true
 
         System.out.println(Arrays.toString(nums1));
+
 
 
         System.out.println(Arrays.compare(nums1, nums2));
@@ -265,6 +269,7 @@ public class LessonTenArray {
 
         int[]  nums7 = Arrays.copyOfRange(nums5, 3, 6);
         System.out.println(Arrays.toString(nums7));
+
     }
 
     /**
