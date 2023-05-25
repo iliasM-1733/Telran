@@ -108,10 +108,10 @@ public class LessonTenArray {
     private static void tryRandomClass() {
         Random random = new Random();
 
-        int[] nums = new int[5];
+        double[] nums = new double[5];
 
         for(int i = 0; i < nums.length; i++) {
-            nums[i] = random.nextInt(-100, 100);
+            nums[i] = random.nextDouble(-1000, 10);
         }
 
         printArray(nums);
@@ -380,6 +380,18 @@ public class LessonTenArray {
      *      System.out.println("]"); - печатаем "]" для корректного отображения массива
      */
     private static void printArray(int[] arr) {
+        System.out.print("[");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i]);
+            if(i != arr.length - 1) {
+                System.out.print(", ");
+            }
+        }
+        System.out.println("]");
+    }
+
+
+    private static void printArray(double[] arr) {
         System.out.print("[");
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i]);
