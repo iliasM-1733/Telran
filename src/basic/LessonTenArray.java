@@ -80,7 +80,12 @@ public class LessonTenArray {
 ////
 ////        String str = "hello";
 ////        System.out.println(nums[10]);
-        tryRandomClass();
+        //tryRandomClass();
+
+        long l = 5l;
+
+
+
     }
 
     /**
@@ -111,7 +116,7 @@ public class LessonTenArray {
         double[] nums = new double[5];
 
         for(int i = 0; i < nums.length; i++) {
-            nums[i] = random.nextDouble(-1000, 10);
+            nums[i] = random.nextDouble(0, 2);
         }
 
         printArray(nums);
