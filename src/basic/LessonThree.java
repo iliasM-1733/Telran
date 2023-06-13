@@ -1,6 +1,7 @@
 package basic;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class LessonThree {
     public static void main(String[] args) {
@@ -10,6 +11,7 @@ public class LessonThree {
         //basicStringOperations();
         //simpleMathOperationsInt();
         //simpleMathOperationsDouble();
+        //tryScanner();
     }
 
 
@@ -103,8 +105,6 @@ public class LessonThree {
         myLong = 1_000;
         myInt = (short) myLong;
 
-        // simpleMathOperationsInt();
-        simpleMathOperationsDouble();
     }
 
     static void informationAboutString() {
@@ -366,5 +366,34 @@ public class LessonThree {
         System.out.println("Произведение a и b = " + product);
         System.out.println("Частное a и b = " + quotient);
         System.out.println("Остаток от деления a на b = " + remainder);
+    }
+
+    /**
+     * Метод tryScanner() демонстрирует работу класса Scanner, который позволяет считывать данные из консоли.
+     * Scanner используется для взаимодействия с пользователем и получения ввода от него.
+     */
+    public static void tryScanner() {
+        Scanner scanner = new Scanner(System.in);
+
+        // Запрос на ввод целочисленного значения
+        System.out.println("Введите целое число:");
+        int x = scanner.nextInt();
+        System.out.println("Ваше число: " + x);
+
+        // Запрос на ввод числа с плавающей точкой
+        System.out.println("Введите число с плавающей точкой:");
+        double y = scanner.nextDouble();
+        System.out.println("Ваше число: " + y);
+
+        // Запрос на ввод строки без пробелов
+        System.out.println("Введите строку без пробелов:");
+        String str = scanner.next();
+        System.out.println("Ваша строка: " + str);
+        scanner.nextLine();
+
+        // Запрос на ввод строки с пробелами
+        System.out.println("Введите строку с пробелами:");
+        str = scanner.nextLine();
+        System.out.println("Ваша строка: " + str);
     }
 }
