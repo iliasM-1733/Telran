@@ -12,6 +12,48 @@ public class LessonThree {
         //simpleMathOperationsInt();
         //simpleMathOperationsDouble();
         //tryScanner();
+
+
+
+
+
+        String str = "Hello Dear Friends!";
+
+        System.out.println("str = " + str);
+        System.out.println(str.length());
+        System.out.println(str.isEmpty()); // true false
+        System.out.println(str.isBlank()); // true false
+        System.out.println(str.contains("dear")); // true false
+        System.out.println(str.startsWith("hello"));
+        System.out.println(str.endsWith("!")); // true
+
+        System.out.println(str.trim()); // удаляет пробелы вначале и в конце строки
+        System.out.println(str.toUpperCase());
+        System.out.println(str.toLowerCase());
+
+        System.out.println(str.toLowerCase().startsWith("h"));
+
+        String str2 = "hello " + " dear " + "friend";
+        System.out.println(str2);
+
+        System.out.println(1 + 2 + "" + 3 + 4);
+        System.out.println("" + 1 + 2); // "1" + 2
+
+        System.out.println("" + 1 + true);
+
+        String str4 = "fedya";
+        System.out.println(str4.charAt(0));
+        System.out.println(str4.charAt(str4.length() - 1));
+
+        String end = str4.substring(1);
+        String start = str4.substring(0,1).toUpperCase(); //I
+
+        System.out.println("Hello, customer! " + start + end);
+
+        System.out.println("abc" == "abc");
+        System.out.println("abc".equals("aBc"));
+        System.out.println("abc".equalsIgnoreCase("aBc"));
+
     }
 
 
