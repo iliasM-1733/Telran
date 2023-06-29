@@ -127,6 +127,7 @@ public class LessonSixIfElse {
         if (gotTemperature && haveSoreThroat) {
             System.out.println("it's look serious, better to call doc");
         } else if (gotTemperature || haveSoreThroat) {
+
             if (gotTemperature) {
                 System.out.println("Enter your temp in C:");
                 double temperature = SCANNER.nextDouble();
@@ -140,20 +141,24 @@ public class LessonSixIfElse {
             } else {
                 System.out.println("drink more hot tea with lemon and honey!");
             }
+
         } else {
             System.out.println("Everything looks fine! You are in a good condition!");
         }
     }
 
 
-    static void shoping(boolean havePotato, boolean haveChicken, boolean haveCandy, boolean haveCake,
-                        boolean havePotatoCake, boolean haveCookie) {
-        if(haveChicken) {
+    static void shopping() {
+
+        System.out.println("У вас есть курица? (да/нет)");
+        String answer = SCANNER.nextLine();
+        if(answer.equals("да")) {
             System.out.println("я купил курицу");
         }
 
-
-        if (havePotato) {
+        System.out.println("У вас есть молодая картошка? (да/нет)");
+        answer = SCANNER.nextLine();
+        if (answer.equals("да")) {
             System.out.println("я купил картошку");
         } else {
             System.out.println("я купил макароны");
@@ -161,17 +166,26 @@ public class LessonSixIfElse {
 
 
 
-        if(haveCandy) {
-            System.out.println("мне на всю сдачу!");
-        } else if (haveCake) {
+        System.out.println("У вас есть конфеты? (да/нет)");
+        answer = SCANNER.nextLine();
+        System.out.println("У вас есть пироженные? (да/нет)");
+        String answerCake = SCANNER.nextLine();
+        System.out.println("У вас есть печенье? (да/нет)");
+        String answerCookie= SCANNER.nextLine();
 
-            if (havePotatoCake) {
+        if(answer.equals("да")) {
+            System.out.println("мне на всю сдачу!");
+        } else if (answerCake.equals("да")) {
+
+            System.out.println("У вас есть пироженное картошка? (да/нет)");
+            answerCake = SCANNER.nextLine();
+            if (answerCake.equals("да")) {
                 System.out.println("дайте три штуки");
             } else {
                 System.out.println("дайте тогда заварную трубочку");
             }
 
-        } else if (haveCookie){
+        } else if (answerCookie.equals("да")){
             System.out.println("тогда мне печенье к чаю");
         } else {
             System.out.println("тогда палочку лакрицы");
